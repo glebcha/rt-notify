@@ -1,0 +1,16 @@
+docs
+build
+node_modules
+
+# Logs
+*.log 
+*.log-* 
+*.log_* 
+*.log.* 
+
+# Editor
+.idea
+.vscode
+
+# mac os
+.DS_Store
