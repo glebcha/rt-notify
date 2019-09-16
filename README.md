@@ -29,7 +29,7 @@ type Theme = {
 const notification = { 
   type: 'waiting', 
   content: 'Waiting Notification New', 
-  width: '700', 
+  width: '700px', 
   onClose: () => console.log('CLOSED WAITING NOTIFICATION') 
 }
 
