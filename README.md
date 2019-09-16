@@ -1,6 +1,9 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
 # [rt-notify](https://glebcha.github.io/rt-notify/)
+
+[![npm version](https://badge.fury.io/js/rt-notify.svg)](https://badge.fury.io/js/rt-notify)
+
 React notifications made simple, yet powerful
 
 ```
