@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const path = require('path')
+const git_changelog = require('git-changelog/tasks/git_changelog_generate')
+const { version, name, description, repository } = require('../package.json')
+
+const template = path.join('changelog', 'template.md')
+const options = {
+  version_name: version,
+  app_name: name,
+  intro: description,
+  repo_url: repository,
+  template,
+  logo: 'https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png',
+}
+
+git_changelog.log('info', `\nTrying to generate changelog....\n`)
+
+git_changelog
+  .generate(options, true)
+  .then(() =>
+    git_changelog.log('success', `Successfully generated changelog for ${name} v${version_name}`),
+    // process.exit(0)
+  )

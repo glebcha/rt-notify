@@ -1,13 +1,16 @@
 {
-  "name": "t-notify",
+  "name": "rt-notify",
   "version": "0.0.1",
   "description": "simple yet powerful notifications for React",
-  "main": "build/index.js",
+  "main": "build/index.cjs.js",
+  "module": "build/index.esm.js",
   "author": "Glebcha",
   "license": "MIT",
+  "repository": "https://github.com/glebcha/t-notify.git",
   "scripts": {
     "start": "start-storybook",
-    "build": "rollup -c",
+    "build": "rollup -c && changelog",
+    "changelog": "changelog/generate-changelog",
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public"
   },
@@ -42,6 +45,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
+    "git-changelog": "^1.1.2",
     "jest": "^24.9.0",
     "react-docgen-typescript-loader": "^3.1.0",
     "rollup": "^1.18.0",
