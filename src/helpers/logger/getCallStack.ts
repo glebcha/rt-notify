@@ -1,7 +1,7 @@
 import { parse } from 'path'
 
 export function getCallStack(showFull: boolean = false): string {
-  const callStackLines = new Error().stack.split('\n')
+  const callStackLines = new Error().stack!.split('\n')
 
   callStackLines.splice(0, 1)
 
