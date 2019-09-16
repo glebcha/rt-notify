@@ -1,8 +1,6 @@
-type Colors = {
-  [color: string]: {[colorId: number]: string},
-}
+import { Theme } from './types'
 
-export const theme: { colors: Colors } = {
+export const theme: Theme = {
   colors: {
     red: {
       [600]: '#c2112c',

@@ -1,5 +1,12 @@
 import * as React from 'react'
 
+export type Theme = {
+  colors: {
+    [color: string]: string | {
+      [code: string]: string}
+    }
+}
+
 export interface INotification {
   id?: string | number
   type: string
@@ -14,15 +21,6 @@ export interface INotifications {
   placement: string
   defaultTimeout: number
   animationTimeout: number
-  theme?: Object
+  theme?: Theme
   duplicatePlaceholder?: React.ReactElement
-}
-
-declare module 'react' {
-  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
-    width?: string
-    type?: string
-    placement?: string
-    animationTimeout?: number
-  }
 }
