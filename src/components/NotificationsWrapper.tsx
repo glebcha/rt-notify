@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const NotificationsWrapper = styled.div`
+export const NotificationsWrapper = styled.div<{placement: string}>`
     position: fixed;
     z-index: 999999;
     max-width: 80%;
