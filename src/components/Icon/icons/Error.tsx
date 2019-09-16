@@ -8,7 +8,7 @@ export const Error = ({ style, fill, width, className, viewBox, onClick }: IconP
     height={width}
     viewBox={viewBox}
     xmlns="http://www.w3.org/2000/svg"
-    className={`t-notify-icon ${className}`}
+    className={`rt-notify-icon ${className}`}
     xmlnsXlink="http://www.w3.org/1999/xlink"
     onClick={onClick}
   >

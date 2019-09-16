@@ -1,4 +1,6 @@
-# [t-notify](https://glebcha.github.io/t-notify/)
+<img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
+
+# [rt-notify](https://glebcha.github.io/rt-notify/)
 React notifications made simple, yet powerful
 
 ```

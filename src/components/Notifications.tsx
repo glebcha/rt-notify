@@ -129,7 +129,7 @@ export class Notifications extends React.Component<INotifications, State> {
         <ThemeProvider theme={customTheme}>
           <NotificationsWrapper 
             placement={placement}
-            className={`t-notify ${placement}`} 
+            className={`rt-notify ${placement}`} 
           >
             <TransitionGroup component={null}>
               {notifications.map(notification => {
