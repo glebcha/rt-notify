@@ -3,10 +3,10 @@ import * as R from 'ramda'
 import { ThemeProvider } from 'styled-components'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Notification } from './Notification'
-import { NotificationsWrapper } from './components/NotificationsWrapper'
-import { hash, logger, createChangeEmitter } from './helpers'
-import { theme as defaultTheme } from './theme'
-import { INotifications, INotification } from './types'
+import { NotificationsWrapper } from './NotificationsWrapper'
+import { hash, logger, createChangeEmitter } from '../helpers'
+import { theme as defaultTheme } from '../theme'
+import { INotifications, INotification } from '../types'
 
 type State = {
   notifications: Array<INotification>

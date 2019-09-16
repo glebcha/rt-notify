@@ -1,11 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { getColorByType, getCssTransform } from './helpers'
-import { Icon } from './components/Icon'
-import { INotification } from './types'
+import { getColorByType, getCssTransform } from '../helpers'
+import { Icon } from './Icon'
+import { INotification, Theme } from '../types'
 
-type Props = INotification & {
+interface Props extends INotification {
   width?: string
+  theme?: Theme
   placement: string
   animationTimeout: number
   defaultTimeout: number
@@ -13,7 +14,7 @@ type Props = INotification & {
   onClose?: INotification['onClose']
 }
 
-const NotificationWrapper = styled('div')`
+const NotificationWrapper = styled.div<{width?: string; type?: string; animationTimeout: number; placement: string}>`
   display: flex;
   box-sizing: border-box;
   ${({ width }): string => width ? `width: ${width};` : ''}
@@ -27,7 +28,7 @@ const NotificationWrapper = styled('div')`
   ${({ animationTimeout }): string => `
       transition: all ${animationTimeout}ms ease-in;
     `};
-  ${({ placement }: {placement: string}) => getCssTransform(placement)}
+  ${({ placement }) => getCssTransform(placement)}
   box-sizing: border-box;
 
   &.notification-enter,
@@ -45,19 +46,17 @@ const NotificationWrapper = styled('div')`
     opacity: 1;
   }
 `
-const IconWrapper = styled('div')`
+const IconWrapper = styled.div<{type: string}>`
   display: inline-block;
   vertical-align: top;
   flex-shrink: 0;
   padding: 16px 16px;
 
-  ${({ type = '', theme: { colors } }): string => `
-      background: ${getColorByType(type, colors).background}
-    `};
+  ${({ type = '', theme: { colors } }): string => `background: ${getColorByType(type, colors).background}`};
 
   box-sizing: border-box;
 `
-const ContentWrapper = styled('div')`
+const ContentWrapper = styled.div`
   display: flex;
   flex-shrink: 1;
   font-size: 16px;
@@ -65,11 +64,10 @@ const ContentWrapper = styled('div')`
   padding: 20px 0 20px 20px;
   box-sizing: border-box;
 `
-const TextWrapper = styled('span')`
-  ${({ type, theme: { colors } }): string => 
-    `${type === 'error' ? `color: ${colors.red['600']};` : ''}`}
+const TextWrapper = styled.span<{type: string; theme: Theme}>`
+  ${({ type = '', theme: { colors } }): string => `${type === 'error' ? `color: ${colors.red['600']};` : ''}`}
 `
-const CloseWrapper = styled('div')`
+const CloseWrapper = styled.div`
   display: flex;
   flex-shrink: 0;
   margin-left: auto;
