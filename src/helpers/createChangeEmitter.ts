@@ -1,5 +1,5 @@
-import { INotification } from "../types"
-import { logger } from '../helpers'
+import { INotification } from '../types'
+import { logger } from '../helpers/logger'
 
 type Action = 'add' | 'remove'
 
