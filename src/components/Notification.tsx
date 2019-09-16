@@ -75,6 +75,7 @@ const CloseWrapper = styled.div`
   height: 100%;
   padding: 20px 24px;
   box-sizing: border-box;
+  cursor: pointer;
 `
 
 export class Notification extends React.Component<Props> {
