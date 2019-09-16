@@ -1,4 +1,4 @@
-export function getColorByType(type: string, colors: any) {
+export function getColorByType(type: string, colors: any): { background: string, border: string } {
   const color = {
     background: colors.green['200'],
     border: colors.green['300'],
