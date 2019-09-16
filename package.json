@@ -6,7 +6,8 @@
   "author": "Glebcha",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c && tsc",
+    "start": "start-storybook",
+    "build": "rollup -c",
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public"
   },
