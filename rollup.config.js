@@ -1,12 +1,12 @@
-import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
+import ts from '@wessberg/rollup-plugin-ts'
+import { terser } from 'rollup-plugin-terser'
 
 const externalRegExp = /^(?:[./\\]|(?:[a-zA-Z]:)).*$/
 
 export default {
-  input: './src/index.js',
+  input: './src/index.tsx',
   output: [
     {
       file: 'build/index.cjs.js',
@@ -21,16 +21,15 @@ export default {
   ],
   external: id => !externalRegExp.test(id),
   plugins: [
-    babel({
-      exclude: 'node_modules/**',
-      runtimeHelpers: true,
+    nodeResolve({
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
+    ts({
+      transpiler: 'babel'
+    }),
+    terser(),
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
-    nodeResolve(),
-    commonjs({
-      include: 'node_modules/*',
     }),
   ],
 }
