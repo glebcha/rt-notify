@@ -133,19 +133,21 @@ export class Notifications extends React.Component<INotifications, State> {
           >
             <TransitionGroup component={null}>
               {notifications.map(notification => {
-                const { id, type, timeout, content } = notification
+                const { id, type, timeout, content, width, onClose } = notification
 
                 return notification && (
                   <CSSTransition key={id} timeout={animationTimeout} classNames="notification">
                     <Notification
                       id={id}
                       type={type}
+                      width={width}
                       placement={placement}
                       animationTimeout={animationTimeout}
                       remove={this.removeNotification}
                       timeout={timeout}
                       content={content}
                       defaultTimeout={defaultTimeout}
+                      onClose={onClose}
                     />
                   </CSSTransition>
                 )
