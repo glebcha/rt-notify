@@ -9,7 +9,7 @@
   "repository": "https://github.com/glebcha/t-notify.git",
   "scripts": {
     "start": "start-storybook",
-    "build": "rollup -c && changelog",
+    "build": "rollup -c && changelog/generate-changelog",
     "changelog": "changelog/generate-changelog",
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public"
