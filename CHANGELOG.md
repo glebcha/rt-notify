@@ -1,6 +1,6 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
-# rt-notify  v0.2.0 
+# rt-notify  v0.2.1
 
 
 ##### _simple yet powerful notifications for React_
@@ -27,6 +27,8 @@
 
 
 ## Refactor
+  - updated dependencies
+  ([21b0fad8](https://github.com/glebcha/t-notify.git/commit/21b0fad8cef0f5cceb2db8af1a428a44cad9b314))
   - renamed repo
   ([0fa947a5](https://github.com/glebcha/t-notify.git/commit/0fa947a55a438cfac611930fec634d27bc102ccf))
   - rollup/ts config
