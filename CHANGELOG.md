@@ -1,12 +1,16 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
-# rt-notify  v0.1.0  
+# rt-notify  v0.2.0 
 
 
 ##### _simple yet powerful notifications for React_
 
 
 ## Bug Fixes
+  - type of id always match string
+  ([4cc7432c](https://github.com/glebcha/t-notify.git/commit/4cc7432c8eb77bf1647b89d0788c10807fc622d1))
+  - fixed changelog version
+  ([add616fc](https://github.com/glebcha/t-notify.git/commit/add616fce6a0f4422cdfca867b36d4c3bdea0cd1))
   - show cursor on close button
   ([e4a967ed](https://github.com/glebcha/t-notify.git/commit/e4a967eda0fb31649d95066f88d6c510069234c0))
   - pass width/onClose properties to notification
