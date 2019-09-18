@@ -104,7 +104,7 @@ export class Notifications extends React.Component<INotifications, State> {
   removeNotification = (id: string) => {
     this.setState(state => {
       const { notifications } = state
-      const findIndex = (id: string, data: Array<INotification>) => R.findIndex(R.propEq('id', id), data);
+      const findIndex = (id: string, data: Array<INotification>) => R.findIndex(item => String(item.id) === id, data);
       const notificationIndex = findIndex(id, notifications)
 
       notifications.splice(notificationIndex, 1)
