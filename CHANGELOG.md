@@ -1,12 +1,14 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
-# rt-notify  v0.3.1
+# rt-notify  v0.3.2
 
 
 ##### _simple yet powerful notifications for React_
 
 
 ## Bug Fixes
+  - repo url
+  ([fb6ee23e](https://github.com/glebcha/t-notify/commit/fb6ee23eba7809d1f79ff3970d80ee2d108eb457))
   - type of id always match string
   ([4cc7432c](https://github.com/glebcha/t-notify/commit/4cc7432c8eb77bf1647b89d0788c10807fc622d1))
   - fixed changelog version
