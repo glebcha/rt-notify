@@ -1,13 +1,14 @@
 import * as React from 'react'
 
-export type Theme = {
-  colors: {
-    [color: string]: string | {
-      [code: string]: string}
-    }
+export type Colors = {
+  [color: string]: string | {[code: string]: string}
 }
 
-export interface INotification {
+export type Theme = {
+  colors: Colors
+}
+
+export interface NotificationProps {
   id?: string | number
   type: string
   content: React.ReactNode
@@ -16,8 +17,8 @@ export interface INotification {
   onClose?: (event?: React.MouseEventHandler<HTMLElement>) => void
 }
 
-export interface INotifications {
-  notifications: Array<INotification>
+export interface NotificationsProps {
+  notifications: Array<NotificationProps>
   placement: string
   defaultTimeout: number
   animationTimeout: number

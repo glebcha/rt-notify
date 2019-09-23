@@ -2,16 +2,16 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { getColorByType, getCssTransform } from '../helpers'
 import { Icon } from './Icon'
-import { INotification, Theme } from '../types'
+import { NotificationProps, Theme } from '../types'
 
-interface Props extends INotification {
+interface Props extends NotificationProps {
   width?: string
   theme?: Theme
   placement: string
   animationTimeout: number
   defaultTimeout: number
   remove: (id: string) => void
-  onClose?: INotification['onClose']
+  onClose?: NotificationProps['onClose']
 }
 
 const NotificationWrapper = styled.div<{width?: string; type?: string; animationTimeout: number; placement: string}>`
@@ -28,7 +28,7 @@ const NotificationWrapper = styled.div<{width?: string; type?: string; animation
   ${({ animationTimeout }): string => `
       transition: all ${animationTimeout}ms ease-in;
     `};
-  ${({ placement }) => getCssTransform(placement)}
+  ${({ placement }): string => getCssTransform(placement)}
   box-sizing: border-box;
 
   &.notification-enter,
@@ -81,15 +81,15 @@ const CloseWrapper = styled.div`
 export class Notification extends React.Component<Props> {
   timer: ReturnType<typeof setTimeout> | null = null
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.setTimer()
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     this.timer && clearTimeout(this.timer)
   }
 
-  setTimer = () => {
+  setTimer = (): void => {
     const { id, remove, timeout, defaultTimeout, onClose } = this.props
 
     if (timeout !== null) {
@@ -100,22 +100,22 @@ export class Notification extends React.Component<Props> {
     }
   }
 
-  onClose = () => {
+  onClose = (): void => {
     const { id, remove, onClose } = this.props
 
     remove(String(id))
     onClose && onClose()
   }
 
-  onMouseOver = () => {
+  onMouseOver = (): void => {
     this.timer && clearTimeout(this.timer)
   }
 
-  onMouseOut = () => {
+  onMouseOut = (): void => {
     this.setTimer()
   }
 
-  render() {
+  render(): React.ReactNode {
     const {
       width,
       type = 'success',

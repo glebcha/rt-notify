@@ -1,6 +1,7 @@
 import { parse } from 'path'
 
-export function getCallStack(showFull: boolean = false): string {
+export function getCallStack(showFull = false): string {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const callStackLines = new Error().stack!.split('\n')
 
   callStackLines.splice(0, 1)

@@ -3,7 +3,7 @@ import chalk from 'chalk'
 
 type Options = { type?: string, message: string }
 
-export function info(options: Options) {
+export function info(options: Options): void {
   const { type = 'info', message } = options
   let result = ''
 

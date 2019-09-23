@@ -6,10 +6,10 @@ import { Notification } from './Notification'
 import { NotificationsWrapper } from './NotificationsWrapper'
 import { hash, logger, createChangeEmitter } from '../helpers'
 import { theme as defaultTheme } from '../theme'
-import { INotifications, INotification } from '../types'
+import { NotificationProps, NotificationsProps } from '../types'
 
 type State = {
-  notifications: Array<INotification>
+  notifications: Array<NotificationProps>
 }
 
 export const eventEmitter = createChangeEmitter()
@@ -27,8 +27,8 @@ const globalState: {
   inited: false,
 }
 
-export class Notifications extends React.Component<INotifications, State> {
-  constructor(props: INotifications) {
+export class Notifications extends React.Component<NotificationsProps, State> {
+  constructor(props: NotificationsProps) {
     super(props)
 
     const globalId = hash()
@@ -52,13 +52,13 @@ export class Notifications extends React.Component<INotifications, State> {
     notifications: [],
   }
 
-  get isValid() {
+  get isValid(): boolean {
     const isValid = this.globalId === globalState.id
 
     return isValid
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.isValid && 
     eventEmitter.listen((action, notification) => {
       switch (action) {
@@ -74,7 +74,7 @@ export class Notifications extends React.Component<INotifications, State> {
     })
   }
 
-  static getDerivedStateFromProps(nextProps: INotifications, state: State): State | null {
+  static getDerivedStateFromProps(nextProps: NotificationsProps, state: State): State | null {
     const { notifications } = nextProps
     const isNotChanged = notifications && R.equals(notifications, state.notifications)
 
@@ -85,7 +85,7 @@ export class Notifications extends React.Component<INotifications, State> {
     return null
   }
 
-  addNotification = (notification: INotification) => {
+  addNotification = (notification: NotificationProps): void => {
     this.setState((state, props) => {
       const { placement } = props
       const { notifications } = state
@@ -101,10 +101,10 @@ export class Notifications extends React.Component<INotifications, State> {
     })
   }
 
-  removeNotification = (id: string) => {
+  removeNotification = (id: string): void => {
     this.setState(state => {
       const { notifications } = state
-      const findIndex = (id: string, data: Array<INotification>) => R.findIndex(item => String(item.id) === id, data);
+      const findIndex = (id: string, data: Array<NotificationProps>): number => R.findIndex(item => String(item.id) === id, data);
       const notificationIndex = findIndex(id, notifications)
 
       notifications.splice(notificationIndex, 1)
@@ -113,7 +113,7 @@ export class Notifications extends React.Component<INotifications, State> {
      })
   }
 
-  render() {
+  render(): React.ReactNode {
     const { 
       placement = 'right', 
       theme = {}, 

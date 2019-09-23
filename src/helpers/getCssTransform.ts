@@ -1,5 +1,5 @@
-export function getCssTransform(placement: string) {
-  const isY = ['top', 'bottom'].indexOf(placement) >= 0
+export function getCssTransform(placement: string): string {
+  const isY = ['top', 'bottom'].includes(placement)
   let percentage = ''
 
   switch (placement) {

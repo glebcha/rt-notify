@@ -1,17 +1,22 @@
-export function getColorByType(type: string, colors: any): { background: string, border: string } {
+import { Colors } from '../types'
+
+export function getColorByType(type: string, colors: Colors): { background: string, border: string } {
+  const red = typeof colors.red !== 'string' ? colors.red['600'] : colors.red
+  const grey = typeof colors.grey !== 'string' ? colors.grey['200'] : colors.grey
+
   const color = {
-    background: colors.green['200'],
-    border: colors.green['300'],
+    background: typeof colors.green !== 'string' ? colors.green['200'] : colors.green,
+    border: typeof colors.green !== 'string' ? colors.green['300'] : colors.green,
   }
 
   switch (type) {
     case 'waiting':
-      color.background = colors.grey['200']
-      color.border = colors.grey['200']
+      color.background = grey
+      color.border = grey
       break
     case 'error':
-      color.background = colors.red['600']
-      color.border = colors.red['600']
+      color.background = red
+      color.border = red
       break
   }
 

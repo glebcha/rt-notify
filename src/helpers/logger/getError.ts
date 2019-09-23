@@ -1,4 +1,4 @@
-export function getError(error: string | Object) {
+export function getError(error: string | Record<string, string>): {code: number, message: string} {
   let result = { code: 1, message: 'unknown error message' }
 
   if (typeof error === 'string') {

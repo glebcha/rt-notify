@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from './types'
 
-export const Waiting = ({ style, fill, width, className, viewBox, onClick }: IconProps) => (
+export const Waiting = ({ style, fill, width, className, viewBox, onClick }: IconProps): React.ReactNode => (
   <svg
     width={width}
     style={style}
