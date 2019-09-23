@@ -6,7 +6,7 @@
   "module": "build/index.esm.js",
   "author": "Glebcha",
   "license": "MIT",
-  "repository": "https://github.com/glebcha/t-notify.git",
+  "repository": "https://github.com/glebcha/t-notify",
   "scripts": {
     "start": "start-storybook",
     "lint": "eslint src --ext .ts,.tsx",
