@@ -19,7 +19,7 @@ export default {
       sourcemap: true,
     },
   ],
-  external: id => !externalRegExp.test(id),
+  external: (id) => !externalRegExp.test(id),
   plugins: [
     nodeResolve({
       extensions: ['.js', '.jsx', '.ts', '.tsx']
