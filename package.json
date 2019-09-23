@@ -10,7 +10,7 @@
   "scripts": {
     "start": "start-storybook",
     "lint": "eslint src --ext .ts,.tsx",
-    "build": "lint && rollup -c && changelog/generate-changelog",
+    "build": "rollup -c && changelog/generate-changelog",
     "changelog": "changelog/generate-changelog",
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public"

@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from './types'
 
-export const Success = ({ style, fill, width, className, viewBox, onClick }: IconProps): React.ReactNode => (
+export const Success = ({ style, fill, width, className, viewBox, onClick }: IconProps): React.ReactElement => (
   <svg
     width={width}
     style={style}
