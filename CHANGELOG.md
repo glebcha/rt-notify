@@ -1,44 +1,33 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
-# rt-notify  v0.3.2
+# rt-notify  v0.4.0  
 
 
 ##### _simple yet powerful notifications for React_
 
 
-## Bug Fixes
-  - repo url
-  ([fb6ee23e](https://github.com/glebcha/t-notify/commit/fb6ee23eba7809d1f79ff3970d80ee2d108eb457))
-  - type of id always match string
-  ([4cc7432c](https://github.com/glebcha/t-notify/commit/4cc7432c8eb77bf1647b89d0788c10807fc622d1))
-  - fixed changelog version
-  ([add616fc](https://github.com/glebcha/t-notify/commit/add616fce6a0f4422cdfca867b36d4c3bdea0cd1))
-
-  - **lint**
-    - refactored components and interface naming
-  ([19a9ecaa](https://github.com/glebcha/t-notify/commit/19a9ecaa0bec909998c8c60b532cb61de2640efb))
-
-
-
-
 ## Features
-  - added eslint
-  ([210ac7ab](https://github.com/glebcha/t-notify/commit/210ac7ab03c629d1c09b46bc8be07d6e123ac628))
 
-  - **storybook**
-    - added configurable default notification timeout
-  ([5e8d96aa](https://github.com/glebcha/t-notify/commit/5e8d96aa2faba61c313f90801ea6eb68f9552069))
+  - **types**
+    - added status and placement types for notification
+  ([5cb0e0c3](https://github.com/glebcha/t-notify/commit/5cb0e0c3956922d6698dcb6e4df71bcd4e046843))
 
 
 
 
 ## Refactor
-  - added rollup config to eslint ignore list
-  ([187e0559](https://github.com/glebcha/t-notify/commit/187e05590d4edde97288c826d25a4ed85ef58fd0))
-  - use stateless functional component type instead react node
-  ([ba815778](https://github.com/glebcha/t-notify/commit/ba81577842d085e82ae810cc3c490628786f0f02))
-  - updated dependencies
-  ([21b0fad8](https://github.com/glebcha/t-notify/commit/21b0fad8cef0f5cceb2db8af1a428a44cad9b314))
+  - abstract classes for better composition
+  ([3ede1b7a](https://github.com/glebcha/t-notify/commit/3ede1b7a8aa6d4026bea6ecd923079fa93110cd4))
+  - select icon by it's original status in lowercase
+  ([8be473f6](https://github.com/glebcha/t-notify/commit/8be473f608aa07f08b14918eb06f53dca86e01d7))
+
+  - **changelog**
+    - modified changelog generation to start from the previous tag
+  ([4cf3429b](https://github.com/glebcha/t-notify/commit/4cf3429bc0852dec8041e72857eb402589e4c8a5))
+
+  - **lint**
+    - disabled console statements
+  ([595d7410](https://github.com/glebcha/t-notify/commit/595d74107d0930f62ab728d0b5b757a3dfb8087a))
 
 
 
