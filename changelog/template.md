@@ -1,4 +1,4 @@
-<% if(logo) { %><img width="300px" src="<%= logo %>" /><%= '\n\n' %><% } %># <%= title %> <% if(version && (version.name || version.number)) { %><% if(version.name){%> v<%= version.name %><% } %> <%= version.number %> <% } %>
+<% if(logo) { %><img width="300px" src="<%= logo %>" /><%= '\n\n' %><% } %># <%= title %> <% if(version && version.name) { %><% if(version.name){%> v<%= version.name %><% } %>  <% } %>
 
 <% if(intro) { %><%= '\n' %>##### _<%= intro %>_<%= '\n' %><% } %>
 <% _.forEach(sections, function(section){ 

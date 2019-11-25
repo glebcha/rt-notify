@@ -1,25 +1,37 @@
 #!/usr/bin/env node
 
 const path = require('path')
+const git = require('simple-git/promise')()
 const git_changelog = require('git-changelog/tasks/git_changelog_generate')
 const { version, name, description, repository } = require('../package.json')
-
-const template = path.join('changelog', 'template.md')
-const options = {
-  version_name: version,
-  app_name: name,
-  intro: description,
-  repo_url: repository,
-  template,
-  provider: 'github',
-  logo: 'https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png',
-}
-
+console.log(version, name)
 git_changelog.log('info', `\nTrying to generate changelog....\n`)
 
-git_changelog
-  .generate(options, true)
+git.tags()
+  .then(({ all = [], latest }) => {
+    const tag = all[all.length - 2] || latest
+    const template = path.join('changelog', 'template.md')
+    const options = {
+      tag,
+      version_name: version,
+      app_name: name,
+      intro: description,
+      repo_url: repository,
+      template,
+      provider: 'github',
+      logo: 'https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png',
+    }
+    return options
+  })
+  .then(params => git_changelog.generate(params, true))
   .then(() =>
-    git_changelog.log('success', `Successfully generated changelog for ${name} v${version_name}`),
+    git_changelog.log('success', `Successfully generated changelog for ${name} v${version}`),
     // process.exit(0)
   )
+
+// git_changelog
+//   .generate(options, true)
+//   .then(() =>
+//     git_changelog.log('success', `Successfully generated changelog for ${name} v${version_name}`),
+//     // process.exit(0)
+//   )
