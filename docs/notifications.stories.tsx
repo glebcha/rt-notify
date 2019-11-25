@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, button, select, boolean, number } from '@storybook/addon-knobs'
 import { Notifications, eventEmitter } from '../src/components/Notifications'
+import { Placement, NotificationProps } from '../src/types'
 
 const Duplicate = (props: { show: boolean }) => props.show &&  
   <Notifications 
@@ -9,7 +10,7 @@ const Duplicate = (props: { show: boolean }) => props.show &&
     duplicatePlaceholder={<h3 style={{textAlign: 'center'}}>Duplicate Notifications Container</h3>}
   />
 
-const defaultNotifications = [
+const defaultNotifications: Array<NotificationProps> = [
   { id: 1, type: 'success', content: 'Success Notification', timeout: null },
   { id: 2, type: 'error', content: 'Error Notification', timeout: null },
 ]
@@ -24,7 +25,7 @@ const options = {
 const defaultValue = 'right'
 
 const handler = (index: number) => {
-  const types = [
+  const types: Array<NotificationProps> = [
     { 
       type: 'waiting', 
       content: 'Waiting Notification New', 
@@ -53,7 +54,7 @@ stories.add('default', () => {
   return (<React.Fragment>
     <Notifications 
       defaultTimeout={number('Default timeout', 3000)}
-      placement={ select(placementLabel, options, defaultValue) } 
+      placement={ select<Placement>(placementLabel, options, defaultValue) } 
       notifications={defaultNotifications} 
     />
     {button('Add Waiting', handler.bind(null, 0))}

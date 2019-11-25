@@ -1,6 +1,6 @@
-import { Colors } from '../types'
+import { Colors, Status } from '../types'
 
-export function getColorByType(type: string, colors: Colors): { background: string, border: string } {
+export function getColorByType(type: Status, colors: Colors): { background: string, border: string } {
   const red = typeof colors.red !== 'string' ? colors.red['600'] : colors.red
   const grey = typeof colors.grey !== 'string' ? colors.grey['200'] : colors.grey
 

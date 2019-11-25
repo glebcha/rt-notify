@@ -1,4 +1,6 @@
-export function getCssTransform(placement: string): string {
+import { Placement } from '../types'
+
+export function getCssTransform(placement: Placement): string {
   const isY = ['top', 'bottom'].includes(placement)
   let percentage = ''
 
