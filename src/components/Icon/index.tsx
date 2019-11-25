@@ -18,7 +18,7 @@ export const Icon = ({
   viewBox?: string
   onClick?: () => void
 }): React.ReactElement => {
-  const SelectedIcon = icons[name.toUpperCase()]
+  const SelectedIcon = icons[name]
 
   return <SelectedIcon
     fill={fill}
