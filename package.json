@@ -1,6 +1,6 @@
 {
   "name": "rt-notify",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "simple yet powerful notifications for React",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
@@ -10,8 +10,10 @@
   "scripts": {
     "start": "start-storybook",
     "lint": "eslint src --ext .ts,.tsx",
-    "build": "rollup -c && changelog/generate-changelog",
+    "build": "rollup -c && yarn changelog",
     "changelog": "changelog/generate-changelog",
+    "preversion": "yarn lint",
+    "postversion": "yarn build",
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public"
   },
