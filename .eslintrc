@@ -23,7 +23,10 @@
     "prettier/@typescript-eslint",
     "prettier/react",
     "prettier/standard"
-	],
+  ],
+  "rules": {
+    "no-console": 2
+  },
   "env": {
     "browser": true,
     "node": true,
