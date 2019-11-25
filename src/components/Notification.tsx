@@ -2,26 +2,43 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { getColorByType, getCssTransform } from '../helpers'
 import { Icon } from './Icon'
-import { NotificationProps, Theme } from '../types'
+import { NotificationProps, Theme, Placement, Status } from '../types'
 
 interface Props extends NotificationProps {
   width?: string
   theme?: Theme
-  placement: string
+  placement: Placement
   animationTimeout: number
   defaultTimeout: number
   remove: (id: string) => void
   onClose?: NotificationProps['onClose']
 }
 
-const NotificationWrapper = styled.div<{width?: string; type?: string; animationTimeout: number; placement: string}>`
+abstract class BaseNotification extends React.Component<Props> {
+  protected timer?: ReturnType<typeof setTimeout>
+  
+  protected abstract setTimer(): void
+  protected abstract onClose(): void
+
+  protected clearTimer = (): void => {
+    this.timer && clearTimeout(this.timer)
+  }
+
+  protected onMouseOver = (): void => this.clearTimer()
+
+  protected onMouseOut = (): void => {
+    this.setTimer()
+  }
+}
+
+const NotificationWrapper = styled.div<{width?: string; type?: Status; animationTimeout: number; placement: Placement}>`
   display: flex;
   box-sizing: border-box;
   ${({ width }): string => width ? `width: ${width};` : ''}
   margin-top: 25px;
   border: 2px solid;
 
-  ${({ type = '', theme: { colors } }): string => `
+  ${({ type = 'success', theme: { colors } }): string => `
       border-color: ${getColorByType(type, colors).border}
     `};
 
@@ -46,13 +63,13 @@ const NotificationWrapper = styled.div<{width?: string; type?: string; animation
     opacity: 1;
   }
 `
-const IconWrapper = styled.div<{type: string}>`
+const IconWrapper = styled.div<{type: Status}>`
   display: inline-block;
   vertical-align: top;
   flex-shrink: 0;
   padding: 16px 16px;
 
-  ${({ type = '', theme: { colors } }): string => `background: ${getColorByType(type, colors).background}`};
+  ${({ type = 'success', theme: { colors } }): string => `background: ${getColorByType(type, colors).background}`};
 
   box-sizing: border-box;
 `
@@ -64,7 +81,7 @@ const ContentWrapper = styled.div`
   padding: 20px 0 20px 20px;
   box-sizing: border-box;
 `
-const TextWrapper = styled.span<{type: string; theme: Theme}>`
+const TextWrapper = styled.span<{type: Status; theme: Theme}>`
   ${({ type = '', theme: { colors } }): string => `${type === 'error' ? `color: ${colors.red['600']};` : ''}`}
 `
 const CloseWrapper = styled.div`
@@ -78,15 +95,13 @@ const CloseWrapper = styled.div`
   cursor: pointer;
 `
 
-export class Notification extends React.Component<Props> {
-  timer: ReturnType<typeof setTimeout> | null = null
-
+export class Notification extends BaseNotification {    
   componentDidMount(): void {
     this.setTimer()
   }
 
   componentWillUnmount(): void {
-    this.timer && clearTimeout(this.timer)
+    this.clearTimer()
   }
 
   setTimer = (): void => {
@@ -105,14 +120,6 @@ export class Notification extends React.Component<Props> {
 
     remove(String(id))
     onClose && onClose()
-  }
-
-  onMouseOver = (): void => {
-    this.timer && clearTimeout(this.timer)
-  }
-
-  onMouseOut = (): void => {
-    this.setTimer()
   }
 
   render(): React.ReactNode {

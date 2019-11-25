@@ -8,16 +8,17 @@ import { hash, logger, createChangeEmitter } from '../helpers'
 import { theme as defaultTheme } from '../theme'
 import { NotificationProps, NotificationsProps } from '../types'
 
-type State = {
-  notifications: Array<NotificationProps>
-}
+type State = Required<NotificationsProps>
 
 export const eventEmitter = createChangeEmitter()
-const defaultProps = {
+
+const defaultProps: Required<NotificationsProps> = {
+  theme: defaultTheme,
   notifications: [],
   placement: 'right',
   defaultTimeout: 1500,
   animationTimeout: 300,
+  duplicatePlaceholder: null,
 }
 const globalState: {
   id: string | null
@@ -27,7 +28,10 @@ const globalState: {
   inited: false,
 }
 
-export class Notifications extends React.Component<NotificationsProps, State> {
+abstract class BaseNotifications extends React.Component<NotificationsProps, State> {
+  state: State = defaultProps
+  globalId?: string | null
+
   constructor(props: NotificationsProps) {
     super(props)
 
@@ -43,15 +47,11 @@ export class Notifications extends React.Component<NotificationsProps, State> {
       logger.error({ type: 'duplicate', silent: true })
     }
   }
+  abstract addNotification(notification: NotificationProps): void
+  abstract removeNotification(id: string): void
+}
 
-  static defaultProps = defaultProps
-
-  globalId: string | null = null
-
-  state: State = {
-    notifications: [],
-  }
-
+export class Notifications extends BaseNotifications {
   get isValid(): boolean {
     const isValid = this.globalId === globalState.id
 
@@ -75,14 +75,10 @@ export class Notifications extends React.Component<NotificationsProps, State> {
   }
 
   static getDerivedStateFromProps(nextProps: NotificationsProps, state: State): State | null {
-    const { notifications } = nextProps
-    const isNotChanged = notifications && R.equals(notifications, state.notifications)
+    const props= { ...defaultProps, ...nextProps}
+    const isNotChanged = props.notifications && R.equals(props, state)
 
-    if (!isNotChanged) {
-      return { notifications }
-    }
-
-    return null
+    return isNotChanged ? null : props
   }
 
   addNotification = (notification: NotificationProps): void => {
@@ -115,13 +111,13 @@ export class Notifications extends React.Component<NotificationsProps, State> {
 
   render(): React.ReactNode {
     const { 
-      placement = 'right', 
-      theme = {}, 
+      placement, 
+      theme, 
+      notifications,
       defaultTimeout, 
       animationTimeout, 
-      duplicatePlaceholder = null
-    } = this.props
-    const { notifications } = this.state
+      duplicatePlaceholder,
+    } = this.state
     const customTheme = R.mergeDeepRight(defaultTheme, theme)
 
     return (
