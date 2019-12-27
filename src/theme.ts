@@ -1,4 +1,4 @@
-import { Theme } from './types'
+import { Theme } from './types';
 
 export const theme: Theme = {
   colors: {
@@ -15,4 +15,4 @@ export const theme: Theme = {
     black: '#000000',
     white: '#ffffff',
   },
-}
+};
