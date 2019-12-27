@@ -1,5 +1,5 @@
-import React from 'react'
-import { icons } from './icons'
+import React from 'react';
+import { icons } from './icons';
 
 export const Icon = ({
   name = 'success',
@@ -18,7 +18,7 @@ export const Icon = ({
   viewBox?: string
   onClick?: () => void
 }): React.ReactElement => {
-  const SelectedIcon = icons[name]
+  const SelectedIcon = icons[name];
 
   return <SelectedIcon
     fill={fill}
@@ -28,5 +28,5 @@ export const Icon = ({
     viewBox={viewBox}
     className={className}
     onClick={onClick}
-  />
-}
+  />;
+};

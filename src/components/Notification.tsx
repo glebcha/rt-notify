@@ -1,8 +1,8 @@
-import * as React from 'react'
-import styled from 'styled-components'
-import { getColorByType, getCssTransform } from '../helpers'
-import { Icon } from './Icon'
-import { NotificationProps, Theme, Placement, Status } from '../types'
+import * as React from 'react';
+import styled from 'styled-components';
+import { getColorByType, getCssTransform } from '../helpers';
+import { Icon } from './Icon';
+import { NotificationProps, Theme, Placement, Status } from '../types';
 
 interface Props extends NotificationProps {
   width?: string
@@ -21,13 +21,13 @@ abstract class BaseNotification extends React.Component<Props> {
   protected abstract onClose(): void
 
   protected clearTimer = (): void => {
-    this.timer && clearTimeout(this.timer)
+    this.timer && clearTimeout(this.timer);
   }
 
   protected onMouseOver = (): void => this.clearTimer()
 
   protected onMouseOut = (): void => {
-    this.setTimer()
+    this.setTimer();
   }
 }
 
@@ -62,7 +62,7 @@ const NotificationWrapper = styled.div<{width?: string; type?: Status; animation
   &.notification-enter-active {
     opacity: 1;
   }
-`
+`;
 const IconWrapper = styled.div<{type: Status}>`
   display: inline-block;
   vertical-align: top;
@@ -72,7 +72,7 @@ const IconWrapper = styled.div<{type: Status}>`
   ${({ type = 'success', theme: { colors } }): string => `background: ${getColorByType(type, colors).background}`};
 
   box-sizing: border-box;
-`
+`;
 const ContentWrapper = styled.div`
   display: flex;
   flex-shrink: 1;
@@ -80,10 +80,10 @@ const ContentWrapper = styled.div`
   line-height: 24px;
   padding: 20px 0 20px 20px;
   box-sizing: border-box;
-`
+`;
 const TextWrapper = styled.span<{type: Status; theme: Theme}>`
   ${({ type = '', theme: { colors } }): string => `${type === 'error' ? `color: ${colors.red['600']};` : ''}`}
-`
+`;
 const CloseWrapper = styled.div`
   display: flex;
   flex-shrink: 0;
@@ -93,33 +93,33 @@ const CloseWrapper = styled.div`
   padding: 20px 24px;
   box-sizing: border-box;
   cursor: pointer;
-`
+`;
 
 export class Notification extends BaseNotification {    
   componentDidMount(): void {
-    this.setTimer()
+    this.setTimer();
   }
 
   componentWillUnmount(): void {
-    this.clearTimer()
+    this.clearTimer();
   }
 
   setTimer = (): void => {
-    const { id, remove, timeout, defaultTimeout, onClose } = this.props
+    const { id, remove, timeout, defaultTimeout, onClose } = this.props;
 
     if (timeout !== null) {
       this.timer = setTimeout(() => {
-        remove(String(id))
-        onClose && onClose()
-      }, timeout || defaultTimeout)
+        remove(String(id));
+        onClose && onClose();
+      }, timeout || defaultTimeout);
     }
   }
 
   onClose = (): void => {
-    const { id, remove, onClose } = this.props
+    const { id, remove, onClose } = this.props;
 
-    remove(String(id))
-    onClose && onClose()
+    remove(String(id));
+    onClose && onClose();
   }
 
   render(): React.ReactNode {
@@ -129,7 +129,7 @@ export class Notification extends BaseNotification {
       content = 'Sample Notifier',
       placement,
       animationTimeout,
-    } = this.props
+    } = this.props;
 
     return (
       <NotificationWrapper
@@ -151,6 +151,6 @@ export class Notification extends BaseNotification {
           <Icon fill='#a1a9b2' width='24' viewBox='0 0 500 500' name="cross" onClick={this.onClose} />
         </CloseWrapper>
       </NotificationWrapper>
-    )
+    );
   }
 }

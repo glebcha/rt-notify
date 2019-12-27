@@ -25,7 +25,8 @@
     "prettier/standard"
   ],
   "rules": {
-    "no-console": 2
+    "no-console": 2,
+    "semi": 2
   },
   "env": {
     "browser": true,

@@ -1,5 +1,5 @@
-import React from 'react'
-import { IconProps } from './types'
+import React from 'react';
+import { IconProps } from './types';
 
 export const Cross = ({ style, fill, width, className, viewBox, onClick }: IconProps): React.ReactElement => (
   <svg
@@ -14,4 +14,4 @@ export const Cross = ({ style, fill, width, className, viewBox, onClick }: IconP
   >
     <polygon fill={fill} points="368.545,157.073 354.461,142.988 255.863,241.587 157.733,143.456 143.648,157.54 241.78,255.672   143.648,353.809 157.733,367.893 255.863,269.75 354.461,368.361 368.545,354.275 269.947,255.672 "/>
   </svg>
-)
+);

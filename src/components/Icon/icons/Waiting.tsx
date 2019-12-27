@@ -1,5 +1,5 @@
-import React from 'react'
-import { IconProps } from './types'
+import React from 'react';
+import { IconProps } from './types';
 
 export const Waiting = ({ style, fill, width, className, viewBox, onClick }: IconProps): React.ReactElement => (
   <svg
@@ -17,4 +17,4 @@ export const Waiting = ({ style, fill, width, className, viewBox, onClick }: Ico
       <polygon fill={fill} points="256.108,276.652 130.108,276.652 130.108,297.652 277.108,297.652 277.108,88.514 256.108,88.514"/>
     </g>
   </svg>
-)
+);

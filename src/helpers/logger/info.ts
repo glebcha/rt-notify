@@ -1,24 +1,24 @@
 /* eslint-disable no-console */
-import chalk from 'chalk'
+import chalk from 'chalk';
 
 type Options = { type?: string, message: string }
 
 export function info(options: Options): void {
-  const { type = 'info', message } = options
-  let result = ''
+  const { type = 'info', message } = options;
+  let result = '';
 
   switch (type) {
     case 'info':
-      result = chalk.grey.bold(message)
-      break
+      result = chalk.grey.bold(message);
+      break;
     case 'success':
-      result = chalk.green.bold(message)
-      break
+      result = chalk.green.bold(message);
+      break;
     case 'warning':
-      result = chalk.yellow.bold(message)
-      break
+      result = chalk.yellow.bold(message);
+      break;
     default:
   }
 
-  console.log(result)
+  console.log(result);
 }

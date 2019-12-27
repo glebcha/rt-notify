@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Placement } from '../types'
+import styled from 'styled-components';
+import { Placement } from '../types';
 
 export const NotificationsWrapper = styled.div<{placement: Placement}>`
     position: fixed;
@@ -33,4 +33,4 @@ export const NotificationsWrapper = styled.div<{placement: Placement}>`
       right: 0;
       padding: 0 15px 15px 0;
     }
-    `
+    `;
