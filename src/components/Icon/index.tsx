@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { icons } from './icons';
 
 export const Icon = ({
@@ -6,13 +6,17 @@ export const Icon = ({
   style = {},
   fill = '#000',
   width = '100%',
+  height = '100%',
   className = '',
   viewBox = '0 0 32 32',
-  onClick = (): void => {},
+  onClick = (): void => {
+    //empty
+  },
 }: {
   name?: string
   fill?: string
   width?: string
+  height?: string
   className?: string
   style?: {[key: string]: string}
   viewBox?: string
@@ -24,7 +28,7 @@ export const Icon = ({
     fill={fill}
     style={style}
     width={width}
-    height={width}
+    height={height}
     viewBox={viewBox}
     className={className}
     onClick={onClick}

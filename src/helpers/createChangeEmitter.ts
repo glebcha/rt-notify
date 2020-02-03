@@ -10,7 +10,9 @@ export type Emitter = {
 
 export function createChangeEmitter(): Emitter {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  let listener = (action: Action, notification?: NotificationProps): void => {};
+  let listener = (action: Action, notification?: NotificationProps): void => {
+    //empty
+  };
 
   function listen(cb: (action: Action, notification?: NotificationProps) => void): void {
     if (typeof cb !== 'function') {
