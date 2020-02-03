@@ -1,0 +1,5 @@
+.wrapper {
+  position: fixed;
+  z-index: 999999;
+  max-width: 80%;
+}
