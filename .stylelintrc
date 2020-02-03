@@ -1,0 +1,26 @@
+{
+    "extends": [
+        "stylelint-config-standard", 
+        "stylelint-config-css-modules",
+        "stylelint-config-rational-order"
+    ],
+    "rules": {
+        "indentation": 2,
+        "selector-nested-pattern": "^&",
+        'declaration-empty-line-before': null,
+        "at-rule-no-unknown": [true, {"ignoreAtRules": ["mixin", "global-import"]} ],
+        "at-rule-empty-line-before": [
+            "always",
+            {
+                except: ["after-same-name", "first-nested"],
+                ignore: ["after-comment"],
+            },
+        ],
+        "plugin/rational-order": [
+            true,
+            {
+                "severity": "warning",
+            },
+        ],
+    }
+}
