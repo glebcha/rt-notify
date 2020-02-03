@@ -6,6 +6,7 @@ export type Colors = {
 export type Theme = {
   colors: Colors
 }
+export type Animation = 'fade' | 'bounce' | 'zoom'
 export type Status = 'waiting' | 'success' | 'error'
 export type Placement = 'top' | 'bottom' | 'left' | 'right'
 
@@ -20,9 +21,8 @@ export interface NotificationProps {
 
 export interface NotificationsProps {
   notifications: Array<NotificationProps>
+  animation?: Animation
   placement?: Placement
   defaultTimeout?: number
-  animationTimeout?: number
-  theme?: Theme
   duplicatePlaceholder?: React.ReactElement | null
 }
