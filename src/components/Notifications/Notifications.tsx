@@ -118,22 +118,22 @@ export class Notifications extends BaseNotifications {
     } = this.state;
     const position = placement.replace(/./,x=>x.toUpperCase());
     const animationVariables: Record<string, string> = {
-      '--t-notify-in-animation': `${animation}In${position}`,
-      '--t-notify-out-animation': `${animation}Out${position}`,
+      '--rt-notify-in-animation': `${animation}In${position}`,
+      '--rt-notify-out-animation': `${animation}Out${position}`,
     };
 
     return (
       this.isValid ? (
         <div
           style={animationVariables} 
-          className={cn('t-notify-root', placement, styles.wrapper)}
+          className={cn('rt-notify-root', placement, styles.wrapper)}
         >
           <TransitionGroup>
             {notifications.map(notification => {
               const { id, type, timeout, content, width, onClose } = notification;
 
               return notification && (
-                <CSSTransition key={id} timeout={500} classNames="t-notify">
+                <CSSTransition key={id} timeout={500} classNames="rt-notify">
                   <Notification
                     id={id}
                     type={type}

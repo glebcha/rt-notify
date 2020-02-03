@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   box-sizing: border-box;
-  width: var(--t-notify-width);
+  width: var(--rt-notify-width);
   margin-top: 25px;
   border: 2px solid;
   animation-duration: 500ms;
@@ -26,7 +26,7 @@
 
   @nest
   & [data-texttype="error"] {
-    color: var(--t-notify-white-200);
+    color: var(--rt-notify-white-200);
   }
 }
 

@@ -65,7 +65,7 @@ export class Notification extends BaseNotification {
       placement,
     } = this.props;
     const notificationVariables = { 
-      ['--t-notify-width' as string]: width, 
+      ['--rt-notify-width' as string]: width, 
     };
 
     return (
