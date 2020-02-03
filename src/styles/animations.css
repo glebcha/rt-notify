@@ -1,0 +1,28 @@
+:global .t-notify-enter {
+  /* opacity: 0; */
+  animation-name: var(--t-notify-in-animation);
+}
+:global .t-notify-enter-active {
+  /* opacity: 1;
+  transition: opacity 500ms ease-in; */
+  
+}
+:global .t-notify-exit {
+  /* opacity: 1; */
+}
+:global .t-notify-exit-active {
+  /* opacity: 0;
+  transition: opacity 500ms ease-in; */
+  animation-name: var(--t-notify-out-animation);
+}
+
+@global-import './effects/fade/in.css';
+@global-import './effects/fade/out.css';
+
+@global-import './effects/zoom/in.css';
+@global-import './effects/zoom/out.css';
+
+@global-import './effects/bounce/in.css';
+@global-import './effects/bounce/out.css';
+
+/* @mixin notification-position; */

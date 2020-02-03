@@ -1,0 +1,31 @@
+:global .t-notify-root.top,
+:global .t-notify-root.bottom {
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+:global .t-notify-root.left,
+:global .t-notify-root.right {
+  bottom: 0;
+}
+
+:global .t-notify-root.top {
+  top: 0;
+  padding: 15px 0 0 0;
+}
+
+:global .t-notify-root.bottom {
+  bottom: 0;
+  padding: 0 0 15px 0;
+}
+
+:global .t-notify-root.left {
+  left: 0;
+  padding: 0 0 15px 15px;
+}
+
+:global .t-notify-root.right {
+  right: 0;
+  padding: 0 15px 15px 0;
+}
