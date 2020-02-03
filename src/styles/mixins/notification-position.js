@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 function getCssTransform(placement) {
-  const rule = `:global .${placement}.t-notify-exit`;
+  const rule = `:global .${placement}.rt-notify-exit`;
   const isY = placement && ['top', 'bottom'].includes(placement);
   let percentage = '';
 

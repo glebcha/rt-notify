@@ -1,21 +1,21 @@
-:global .t-notify-enter {
+:global .rt-notify-enter {
   /* opacity: 0; */
-  animation-name: var(--t-notify-in-animation);
+  animation-name: var(--rt-notify-in-animation);
 }
 
-:global .t-notify-enter-active {
+:global .rt-notify-enter-active {
   /* opacity: 1;
   transition: opacity 500ms ease-in; */
 }
 
-:global .t-notify-exit {
+:global .rt-notify-exit {
   /* opacity: 1; */
 }
 
-:global .t-notify-exit-active {
+:global .rt-notify-exit-active {
   /* opacity: 0;
   transition: opacity 500ms ease-in; */
-  animation-name: var(--t-notify-out-animation);
+  animation-name: var(--rt-notify-out-animation);
 }
 
 @global-import './effects/fade/in.css';

@@ -34,13 +34,13 @@ function getColorByType(type) {
   }
 
   return {
-    [`:global .t-notify-root .${type}`]: { border, background },
-    [`:global .t-notify-root [data-icontype="${type}"]`]: { background: border },
+    [`:global .rt-notify-root .${type}`]: { border, background },
+    [`:global .rt-notify-root [data-icontype="${type}"]`]: { background: border },
   };
 }
 
 module.exports = () => {
-  const prefix = '--t-notify-';
+  const prefix = '--rt-notify-';
   const types = ['success', 'waiting', 'error'];
   const mappedTypes = types.reduce((typeset, type) => ({ ...typeset, ...getColorByType(type) }), {});
 
