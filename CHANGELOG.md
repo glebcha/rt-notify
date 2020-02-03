@@ -1,6 +1,6 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
-# rt-notify  v0.4.0  
+# rt-notify  v1.0.0  
 
 
 ##### _simple yet powerful notifications for React_
@@ -8,30 +8,28 @@
 
 ## Features
 
+  - **storybook**
+    - added animation select
+  ([c12fecf0](https://github.com/glebcha/rt-notify/commit/c12fecf0be60baeee3516dfc310817fc687967a0))
+
   - **styles**
     - global css rules
-  ([8a26a629](https://github.com/glebcha/rt-notify/commit/8a26a629e97496b839ffa4e019d4f8d504e987d6))
+  ([297c22ec](https://github.com/glebcha/rt-notify/commit/297c22ec790c013905edcc755ee133a8d90a680c))
     - animation effects
-  ([23e8fc1e](https://github.com/glebcha/rt-notify/commit/23e8fc1eda69804ea222aa4515e5df9243229f0e))
+  ([4271b82f](https://github.com/glebcha/rt-notify/commit/4271b82f7e67322e2d475115d7fe6ca1c30d48de))
     - notification position animation mixin
-  ([544de02e](https://github.com/glebcha/rt-notify/commit/544de02e5e96afe38d2a981605c8a0459c169d82))
+  ([63bbd9bb](https://github.com/glebcha/rt-notify/commit/63bbd9bbd350808452aa7374c0ab9bc98c221dfa))
     - color theme mixin
-  ([a3d27cf1](https://github.com/glebcha/rt-notify/commit/a3d27cf198708c2dfd270d3d44321d04329a1b64))
-
-  - **types**
-    - added status and placement types for notification
-  ([5cb0e0c3](https://github.com/glebcha/rt-notify/commit/5cb0e0c3956922d6698dcb6e4df71bcd4e046843))
+  ([139badcc](https://github.com/glebcha/rt-notify/commit/139badcca4836180251ceacb76e0931c84b5ce2f))
 
 
 
 
 ## Refactor
+  - changed class naming to rt-notify
+  ([0f68499a](https://github.com/glebcha/rt-notify/commit/0f68499adce54064a4fa857a6cf6d4fcc921f4f3))
   - added animation type
-  ([28026ad9](https://github.com/glebcha/rt-notify/commit/28026ad94597e62fa7872d7b97b5e52f91016029))
-  - abstract classes for better composition
-  ([3ede1b7a](https://github.com/glebcha/rt-notify/commit/3ede1b7a8aa6d4026bea6ecd923079fa93110cd4))
-  - select icon by it's original status in lowercase
-  ([8be473f6](https://github.com/glebcha/rt-notify/commit/8be473f608aa07f08b14918eb06f53dca86e01d7))
+  ([770ff058](https://github.com/glebcha/rt-notify/commit/770ff058686be0b2ad89feffc2900b20d61f60ab))
 
   - **changelog**
     - modified changelog generation to start from the previous tag
@@ -40,43 +38,57 @@
   - **lint**
     - added semicolon rule as must
   ([0fe7a568](https://github.com/glebcha/rt-notify/commit/0fe7a56882b176f2d4f40f9566eb6787cc4b742b))
-    - disabled console statements
-  ([595d7410](https://github.com/glebcha/rt-notify/commit/595d74107d0930f62ab728d0b5b757a3dfb8087a))
 
   - **rollup**
     - make rollup work with css modules
-  ([5ecce7a2](https://github.com/glebcha/rt-notify/commit/5ecce7a202b56a2fd2367baba8d1774d178c21a9))
+  ([8cc463e5](https://github.com/glebcha/rt-notify/commit/8cc463e50419f56995724ca75408f803e8f0e02b))
+
+  - **storybook**
+    - set equal width for notifications
+  ([6f3505de](https://github.com/glebcha/rt-notify/commit/6f3505debe1dba79d5aacaf7226c05175611ebcc))
 
   - **styles**
     - migration to pure css
-  ([f9077a96](https://github.com/glebcha/rt-notify/commit/f9077a96f2b9459cbb3b442092ac70c052ebdcb9))
+  ([f09c2470](https://github.com/glebcha/rt-notify/commit/f09c24708208912e20030559ca1331acff9b8ce2))
+
+  - **ts**
+    - changed target to es2015
+  ([03af6226](https://github.com/glebcha/rt-notify/commit/03af62261497479abf65f246067cda49d5ab605f))
 
   - **webpack**
     - support css modules
-  ([10703e80](https://github.com/glebcha/rt-notify/commit/10703e801003c2f8941205a1fb48dce9a7ed0bbb))
+  ([8453fba0](https://github.com/glebcha/rt-notify/commit/8453fba01c5f428d9d48934212106c7ac28066d9))
 
 
 
 
 ## Chore
+  - pass config to commitlint
+  ([dbc49689](https://github.com/glebcha/rt-notify/commit/dbc49689dcb38029e3379b8d8a49a0674aa24aee))
+  - updated readme
+  ([2e826e05](https://github.com/glebcha/rt-notify/commit/2e826e05c37af081c750704c8a5e9d2d27081f55))
+  - updated changelog
+  ([90b6b7f3](https://github.com/glebcha/rt-notify/commit/90b6b7f3c644f56badd59963b843743cb6131cae))
+  - added commit/pre-push/types check
+  ([b124fc93](https://github.com/glebcha/rt-notify/commit/b124fc93bef29fa998cb433e547eb577e33190c6))
   - ignore css typings
-  ([69f45156](https://github.com/glebcha/rt-notify/commit/69f45156ed0270ae73c86ef827bfd60c528f25d6))
+  ([644457ca](https://github.com/glebcha/rt-notify/commit/644457ca17a66c9444306e558918ee178a13bc19))
   - use postcss with plugins
-  ([e68e666f](https://github.com/glebcha/rt-notify/commit/e68e666f46c4bedc0138af36da1315f10aef2e34))
+  ([a070abec](https://github.com/glebcha/rt-notify/commit/a070abec09658bebfd5c5e1b7a7a3ad47491497d))
   - use styles linting
-  ([cceae17b](https://github.com/glebcha/rt-notify/commit/cceae17b9c95938895894ac524c93e0d31b5d388))
+  ([917bb0be](https://github.com/glebcha/rt-notify/commit/917bb0bebed6424290f969b200f544f7647dc32b))
   - use browserlist to support minimal viable configuration
-  ([81d36c4f](https://github.com/glebcha/rt-notify/commit/81d36c4f9eb11d1151065f6e351d34035ef06516))
+  ([13a99310](https://github.com/glebcha/rt-notify/commit/13a993109c7320d141dd0d71526365e43a2cde48))
   - updated dependencies
-  ([6bb2c8b6](https://github.com/glebcha/rt-notify/commit/6bb2c8b60ea554a8ccb3e65d252ff73673d63dd3))
+  ([8a6a05c2](https://github.com/glebcha/rt-notify/commit/8a6a05c24656aa3b5633acff202053e9f2599332))
   - fixed lint errors
-  ([9797a83d](https://github.com/glebcha/rt-notify/commit/9797a83d760b5c69041270558a692e81927e1273))
+  ([79c37d4c](https://github.com/glebcha/rt-notify/commit/79c37d4cee6733123ce31dc26804fc287018f13f))
   - fixed lint errors
-  ([16893652](https://github.com/glebcha/rt-notify/commit/168936525f0c7e06fc4bf1042c8ea24d265047dc))
+  ([b34addb0](https://github.com/glebcha/rt-notify/commit/b34addb0473e4abf30f93bab496281077d94a7f1))
 
   - **babel**
     - use transform-runtime plugin with exact corejs version
-  ([3784f973](https://github.com/glebcha/rt-notify/commit/3784f9733a543928dea9f23f0791d5eb3b789773))
+  ([261e8817](https://github.com/glebcha/rt-notify/commit/261e881717e2ef6b7c195e5f19358e9f89feb7cd))
 
 
 
