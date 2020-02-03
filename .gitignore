@@ -13,3 +13,6 @@ node_modules
 
 # mac os
 .DS_Store
+
+# css typings
+*.css.*
