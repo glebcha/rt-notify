@@ -11,7 +11,7 @@ const Duplicate = (props: { show: boolean }) => props.show &&
   />
 
 const defaultNotifications: Array<NotificationProps> = [
-  { id: 1, type: 'success', content: 'Success Notification', width: '300px', timeout: null },
+  { id: 1, type: 'success', content: 'Success Notification', width: '400px', timeout: null },
   { id: 2, type: 'error', content: 'Error Notification', width: '400px', timeout: null },
 ]
 
@@ -37,17 +37,17 @@ const handler = (index: number) => {
     { 
       type: 'waiting', 
       content: 'Waiting Notification New', 
-      width: '600px', 
+      width: '400px', 
       onClose: () => console.log('CLOSED WAITING NOTIFICATION') 
     },
     { 
       type: 'success', 
-      width: '450px', 
+      width: '400px', 
       content: 'Success Notification New', 
     },
     { 
       type: 'error', 
-      width: '300px', 
+      width: '400px', 
       content: 'Error Notification New' 
     },
   ]
