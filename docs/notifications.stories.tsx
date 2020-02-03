@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, button, select, boolean, number } from '@storybook/addon-knobs'
-import { Notifications, eventEmitter } from '../src/components/Notifications'
-import { Placement, NotificationProps } from '../src/types'
+import { Notifications, eventEmitter } from '../src/components/Notifications/Notifications'
+import { Animation, Placement, NotificationProps } from '../src/types'
 
 const Duplicate = (props: { show: boolean }) => props.show &&  
   <Notifications 
@@ -11,18 +11,26 @@ const Duplicate = (props: { show: boolean }) => props.show &&
   />
 
 const defaultNotifications: Array<NotificationProps> = [
-  { id: 1, type: 'success', content: 'Success Notification', timeout: null },
-  { id: 2, type: 'error', content: 'Error Notification', timeout: null },
+  { id: 1, type: 'success', content: 'Success Notification', width: '300px', timeout: null },
+  { id: 2, type: 'error', content: 'Error Notification', width: '400px', timeout: null },
 ]
 
 const placementLabel = 'Placement'
-const options = {
+const placementOptions = {
   top: 'top',
   bottom: 'bottom',
   left: 'left',
   right: 'right',
 }
-const defaultValue = 'right'
+const defaultPlacementValue = 'right'
+
+const animationLabel = 'Animation type'
+const animationOptions = {
+  fade: 'fade',
+  bounce: 'bounce',
+  zoom: 'zoom',
+}
+const defaultAnimationValue = 'fade'
 
 const handler = (index: number) => {
   const types: Array<NotificationProps> = [
@@ -54,7 +62,8 @@ stories.add('default', () => {
   return (<React.Fragment>
     <Notifications 
       defaultTimeout={number('Default timeout', 3000)}
-      placement={ select<Placement>(placementLabel, options, defaultValue) } 
+      animation={select<Animation>(animationLabel, animationOptions, defaultAnimationValue)}
+      placement={ select<Placement>(placementLabel, placementOptions, defaultPlacementValue) } 
       notifications={defaultNotifications} 
     />
     {button('Add Waiting', handler.bind(null, 0))}
