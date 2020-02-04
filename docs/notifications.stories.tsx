@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, button, select, boolean, number } from '@storybook/addon-knobs'
-import { Notifications, eventEmitter } from '../src/components/Notifications/Notifications'
+import { Notifications, eventEmitter } from '../src/components/Notifications'
 import { Animation, Placement, NotificationProps } from '../src/types'
 
 const Duplicate = (props: { show: boolean }) => props.show &&  
