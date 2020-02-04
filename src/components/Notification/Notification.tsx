@@ -78,11 +78,11 @@ export class Notification extends BaseNotification {
         <div data-icontype={type} className={styles.icon}>
           <Icon fill='#fff' width='32' viewBox='0 0 500 500' name={type} />
         </div>
-        <div className={styles.content}>
-          <span data-texttype={type}>{content}</span>
+        <div data-texttype={type} className={styles.content}>
+          {content}
         </div>
         <div className={styles.close}>
-          <Icon fill='#a1a9b2' width='24' viewBox='0 0 500 500' name="cross" onClick={this.onClose} />
+          <Icon fill='#a1a9b2' width='35' viewBox='0 0 500 500' name="cross" onClick={this.onClose} />
         </div>
       </div>
     );
