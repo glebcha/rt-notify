@@ -34,17 +34,17 @@
 
 .close {
   display: inline-block;
-  vertical-align: top;
   flex-shrink: 0;
   box-sizing: border-box;
   margin-right: 0;
   margin-left: auto;
   padding: 15px 14px;
+  vertical-align: top;
   cursor: pointer;
 }
 
 .close:hover > svg * {
+  transition: fill 0.5s ease-in;
   fill: #767b80;
   fill: var(--rt-notify-grey-400);
-  transition: fill .5s ease-in;
 }
