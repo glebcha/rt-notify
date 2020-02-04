@@ -1,20 +1,10 @@
 :global .rt-notify-enter {
-  /* opacity: 0; */
+  animation-name: fadeIn;
   animation-name: var(--rt-notify-in-animation);
 }
 
-:global .rt-notify-enter-active {
-  /* opacity: 1;
-  transition: opacity 500ms ease-in; */
-}
-
-:global .rt-notify-exit {
-  /* opacity: 1; */
-}
-
 :global .rt-notify-exit-active {
-  /* opacity: 0;
-  transition: opacity 500ms ease-in; */
+  animation-name: fadeOut;
   animation-name: var(--rt-notify-out-animation);
 }
 

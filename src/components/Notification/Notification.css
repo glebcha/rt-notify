@@ -1,11 +1,18 @@
 .wrapper {
   display: flex;
   box-sizing: border-box;
+  width: 350px;
   width: var(--rt-notify-width);
   margin-top: 25px;
   border: 2px solid;
   animation-duration: 500ms;
   animation-fill-mode: both;
+
+  @nest
+  & [data-texttype="error"] {
+    color: #fff;
+    color: var(--rt-notify-white-200);
+  }
 }
 
 .icon {
@@ -23,20 +30,21 @@
   padding: 20px 0 20px 20px;
   font-size: 16px;
   line-height: 24px;
-
-  @nest
-  & [data-texttype="error"] {
-    color: var(--rt-notify-white-200);
-  }
 }
 
 .close {
-  display: flex;
+  display: inline-block;
+  vertical-align: top;
   flex-shrink: 0;
   box-sizing: border-box;
-  height: 100%;
   margin-right: 0;
   margin-left: auto;
-  padding: 20px 24px;
+  padding: 15px 14px;
   cursor: pointer;
+}
+
+.close:hover > svg * {
+  fill: #767b80;
+  fill: var(--rt-notify-grey-400);
+  transition: fill .5s ease-in;
 }

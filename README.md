@@ -6,6 +6,8 @@
 
 React notifications made simple, yet powerful
 
+##### All dynamic styling propeties made with css variables and fallback to default properties.
+
 ```
 const notification = { 
   type: 'waiting', 
