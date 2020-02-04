@@ -1,6 +1,7 @@
 import * as React from 'react';
-import * as R from 'ramda';
 import cn from 'classnames';
+import equals from '@bit/ramda.ramda.equals';
+import findIndex from '@bit/ramda.ramda.find-index';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Notification } from '../Notification/Notification';
 import { hash, logger, createChangeEmitter } from '../../helpers';
@@ -75,7 +76,7 @@ export class Notifications extends BaseNotifications {
 
   static getDerivedStateFromProps(nextProps: NotificationsProps, state: State): State | null {
     const props= { ...defaultProps, ...nextProps};
-    const isNotChanged = props.notifications && R.equals(props, state);
+    const isNotChanged = props.notifications && equals(props, state);
 
     return isNotChanged ? null : props;
   }
@@ -99,8 +100,8 @@ export class Notifications extends BaseNotifications {
   removeNotification = (id: string): void => {
     this.setState(state => {
       const { notifications } = state;
-      const findIndex = (id: string, data: Array<NotificationProps>): number => R.findIndex(item => String(item.id) === id, data);
-      const notificationIndex = findIndex(id, notifications);
+      const getIndex = (id: string, data: Array<NotificationProps>): number => findIndex(item => String(item.id) === id, data);
+      const notificationIndex = getIndex(id, notifications);
 
       notifications.splice(notificationIndex, 1);
 
