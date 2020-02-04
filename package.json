@@ -11,6 +11,12 @@
     "build",
     "yarn.lock"
   ],
+  "keywords": [
+    "react",
+    "notification",
+    "toast",
+    "rt-notify"
+  ],
   "scripts": {
     "start": "start-storybook --port 9444",
     "test": "jest --passWithNoTests",
