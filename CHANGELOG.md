@@ -1,6 +1,6 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
-# rt-notify  v1.0.0  
+# rt-notify  v1.1.1  
 
 
 ##### _simple yet powerful notifications for React_
@@ -85,6 +85,8 @@
   ([79c37d4c](https://github.com/glebcha/rt-notify/commit/79c37d4cee6733123ce31dc26804fc287018f13f))
   - fixed lint errors
   ([b34addb0](https://github.com/glebcha/rt-notify/commit/b34addb0473e4abf30f93bab496281077d94a7f1))
+  - added package keywords
+  ([f5cb989b](https://github.com/glebcha/rt-notify/commit/f5cb989bc7e20009c23e7cfd34626bff8784e093))  
 
   - **babel**
     - use transform-runtime plugin with exact corejs version
