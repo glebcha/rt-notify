@@ -1,5 +1,11 @@
-.wrapper {
+.root {
   position: fixed;
   z-index: 999999;
   max-width: 80%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
