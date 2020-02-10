@@ -1,6 +1,6 @@
 {
   "name": "rt-notify",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "simple yet powerful notifications for React",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
