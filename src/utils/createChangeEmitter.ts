@@ -1,5 +1,5 @@
 import { NotificationProps } from '../types';
-import { logger } from '../helpers/logger';
+import { logger } from './logger';
 
 export type Action = 'add' | 'remove'
 
