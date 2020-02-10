@@ -1,9 +1,9 @@
 import { NotificationProps } from '../types';
 import { logger } from '../helpers/logger';
 
-type Action = 'add' | 'remove'
+export type Action = 'add' | 'remove'
 
-export type Emitter = { 
+export interface Emitter { 
   listen: (cb: (action: Action, notification?: NotificationProps) => void) => void, 
   emit: (action: Action, notification?: NotificationProps) => void 
 }
