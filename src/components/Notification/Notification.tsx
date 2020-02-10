@@ -1,90 +1,51 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { Icon } from '../Icon';
-import { NotificationProps, Theme, Placement } from '../../types';
+import { setTimer } from './helpers/setTimer';
+import { clearTimer } from './helpers/clearTimer';
+import { handleClose } from './helpers/handleClose';
+
+import { Props, Timer } from './types';
+
 import styles from './Notification.css';
 
-interface Props extends NotificationProps {
-  width?: string
-  theme?: Theme
-  placement: Placement
-  defaultTimeout: number
-  remove: (id: string) => void
-  onClose?: NotificationProps['onClose']
-}
+export const Notification: React.FC<Props> = props => {
+  const {
+    width = 'auto',
+    type = 'success',
+    content = 'Sample Notifier',
+    placement,
+  } = props;
+  const timer: Timer = React.useRef(null);
+  const onClick = handleClose(props);
+  const onMouseOver = (): void => clearTimer(timer);
+  const onMouseOut = (): void => setTimer(props, timer);
+  const notificationVariables = { 
+    ['--rt-notify-width' as string]: width, 
+  };
 
-abstract class BaseNotification extends React.Component<Props> {
-  protected timer?: ReturnType<typeof setTimeout>
-  
-  protected abstract setTimer(): void
-  protected abstract onClose(): void
+  React.useEffect(() => {
+    setTimer(props, timer);
 
-  protected clearTimer = (): void => {
-    this.timer && clearTimeout(this.timer);
-  }
+    return (): void => clearTimer(timer);
+  }, []);
 
-  protected onMouseOver = (): void => this.clearTimer()
-
-  protected onMouseOut = (): void => {
-    this.setTimer();
-  }
-}
-
-export class Notification extends BaseNotification {    
-  componentDidMount(): void {
-    this.setTimer();
-  }
-
-  componentWillUnmount(): void {
-    this.clearTimer();
-  }
-
-  setTimer = (): void => {
-    const { id, remove, timeout, defaultTimeout, onClose } = this.props;
-
-    if (timeout !== null) {
-      this.timer = setTimeout(() => {
-        remove(String(id));
-        onClose && onClose();
-      }, timeout || defaultTimeout);
-    }
-  }
-
-  onClose = (): void => {
-    const { id, remove, onClose } = this.props;
-
-    remove(String(id));
-    onClose && onClose();
-  }
-
-  render(): React.ReactNode {
-    const {
-      width = 'auto',
-      type = 'success',
-      content = 'Sample Notifier',
-      placement,
-    } = this.props;
-    const notificationVariables = { 
-      ['--rt-notify-width' as string]: width, 
-    };
-
-    return (
-      <div
-        style={notificationVariables}
-        className={cn(styles.wrapper, placement, type)}
-        onMouseOver={this.onMouseOver}
-        onMouseOut={this.onMouseOut}
-      >
-        <div data-icontype={type} className={styles.icon}>
-          <Icon fill='#fff' width='32' viewBox='0 0 500 500' name={type} />
-        </div>
-        <div data-texttype={type} className={styles.content}>
-          {content}
-        </div>
-        <div className={styles.close}>
-          <Icon fill='#a1a9b2' width='35' viewBox='0 0 500 500' name="cross" onClick={this.onClose} />
-        </div>
+  return (
+    <div
+      style={notificationVariables}
+      className={cn(styles.wrapper, placement, type)}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+    >
+      <div data-icontype={type} className={styles.icon}>
+        <Icon fill='#fff' width='32' viewBox='0 0 500 500' name={type} />
       </div>
-    );
-  }
-}
+      <div data-texttype={type} className={styles.content}>
+        {content}
+      </div>
+      <div className={styles.close}>
+        <Icon fill='#a1a9b2' width='35' viewBox='0 0 500 500' name="cross" onClick={onClick} />
+      </div>
+    </div>
+  );
+};
