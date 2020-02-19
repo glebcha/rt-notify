@@ -8,7 +8,7 @@ import { compareProps } from './helpers/compareProps';
 import { eventsListener } from './helpers/eventListener';
 import { removeNotification } from './helpers/removeNotification';
 
-import { State, GlobalState } from './types';
+import { State } from './types';
 import { NotificationsProps } from '../../types';
 
 import styles from './Notifications.css';
@@ -22,11 +22,6 @@ const defaultProps: Required<NotificationsProps> = {
   placement: 'right',
   defaultTimeout: 1500,
   duplicatePlaceholder: null,
-};
-
-const globalState: GlobalState = {
-  id: null,
-  inited: false,
 };
 
 export const Notifications: React.FC<NotificationsProps> = React.memo(props => {
@@ -46,12 +41,11 @@ export const Notifications: React.FC<NotificationsProps> = React.memo(props => {
   };
 
   React.useEffect(() => {
-    const globalId = hash();
+    const instanceId = hash();
+    const { instances, inited } = eventEmitter.register(instanceId);
+    const isValid = inited && instances.length === 1;
 
-    if (!globalState.inited) {
-      globalState.inited = true;
-      globalState.id = globalId;
-
+    if (isValid) {
       setValid(true);
       eventEmitter.listen(eventsListener(setState));
     } else {

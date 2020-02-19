@@ -3,12 +3,19 @@ import { logger } from './logger';
 
 export type Action = 'add' | 'remove'
 
+interface Register { 
+  instances: Array<string>, 
+  inited: boolean
+}
+
 export interface Emitter { 
   listen: (cb: (action: Action, notification?: NotificationProps) => void) => void, 
-  emit: (action: Action, notification?: NotificationProps) => void 
+  emit: (action: Action, notification?: NotificationProps) => void, 
+  register: (id: Register['instances'][number]) => Register
 }
 
 export function createChangeEmitter(): Emitter {
+  const instances: Register['instances'] = [];
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let listener = (action: Action, notification?: NotificationProps): void => {
     //empty
@@ -26,5 +33,13 @@ export function createChangeEmitter(): Emitter {
     return listener(action, notification); 
   }
 
-  return { listen, emit };
+  function register(id: Register['instances'][number]): Register {
+    const inited = !instances.includes(id);
+
+    inited && instances.push(id);
+
+    return { instances, inited };
+  }
+
+  return { listen, emit, register };
 }
