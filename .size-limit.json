@@ -1,6 +1,10 @@
 [
   {
-    "path": "build/index.esm.js",
-    "limit": "60 KB"
+    "path": ["build/index.cjs.js"],
+    "limit": "74 KB"
+  },
+  {
+    "path": ["build/index.esm.js"],
+    "limit": "72 KB"
   }
 ]
