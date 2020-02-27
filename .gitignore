@@ -1,6 +1,9 @@
 build
 node_modules
 
+# configs
+*.size-snapshot.*
+
 # Logs
 *.log 
 *.log-* 

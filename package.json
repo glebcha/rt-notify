@@ -37,6 +37,7 @@
     }
   },
   "dependencies": {
+    "@babel/runtime-corejs3": "^7.8.4",
     "@bit/ramda.ramda.equals": "^0.26.1",
     "@bit/ramda.ramda.find-index": "^0.26.1",
     "classnames": "^2.2.6",
@@ -98,6 +99,7 @@
     "rollup-plugin-postcss": "^2.0.5",
     "rollup-plugin-postcss-modules": "^2.0.1",
     "rollup-plugin-ramda": "^1.0.5",
+    "rollup-plugin-size-snapshot": "^0.11.0",
     "rollup-plugin-terser": "^5.1.1",
     "simple-git": "^1.126.0",
     "size-limit": "^4.0.0",
