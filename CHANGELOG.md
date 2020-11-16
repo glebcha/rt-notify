@@ -7,7 +7,7 @@
 
 
 ## Bug Fixes
-  - lint errors in jest config [208d20e3](https://github.com/glebcha/rt-notify/commit/208d20e34fdcafe489308490ab210ae20fba461f) 
+  - lint errors in jest config [c5e44991](https://github.com/glebcha/rt-notify/commit/c5e44991c9ed5eefec1a072a366548b9ba97df7a) 
   
 
 
@@ -19,11 +19,12 @@
 
 
 ## Chore
-  - updated changelog [9dc8aabf](https://github.com/glebcha/rt-notify/commit/9dc8aabf4629e32c58264fef76d6ecc70d2dc976) 
-    - migrated storybook to version 6 [7a9e96b3](https://github.com/glebcha/rt-notify/commit/7a9e96b36b4f057fed3e995afd1a35a1e1feb7ac) 
-    - added storybook build directory in gitignore [66121600](https://github.com/glebcha/rt-notify/commit/661216002fd132c067f73e40ab1d4483f1f123aa) 
-    - supress babel warning by adding loose option for private methods plugin [1c93e438](https://github.com/glebcha/rt-notify/commit/1c93e438cd72fee0cb1c044ce83afe046d0f0562) 
-    - moved to npm, updated dependencies [f989bb5f](https://github.com/glebcha/rt-notify/commit/f989bb5fc5cbe333f3c4a9698aeead5930129cd7) 
+  - updated changelog [8126a9a7](https://github.com/glebcha/rt-notify/commit/8126a9a78cc8c442855aa7998835763d0d44e88e) 
+    - updated changelog [4f19b82b](https://github.com/glebcha/rt-notify/commit/4f19b82ba3a648b05bc95ac5de861863b973738d) 
+    - migrated storybook to version 6 [0ba28865](https://github.com/glebcha/rt-notify/commit/0ba28865442c2a337ecf26b0f93440acf070805d) 
+    - added storybook build directory in gitignore [6f52e391](https://github.com/glebcha/rt-notify/commit/6f52e39178000046c11e546d8a127546e7f47038) 
+    - supress babel warning by adding loose option for private methods plugin [bba97912](https://github.com/glebcha/rt-notify/commit/bba979123609c252c8d963e41b85c211dd478687) 
+    - moved to npm, updated dependencies [5d1fd188](https://github.com/glebcha/rt-notify/commit/5d1fd188f95d89ea4d6c61cd431a6ec5fe3e1d0c) 
     - now lint storybook stories [434550d0](https://github.com/glebcha/rt-notify/commit/434550d0b20115a04707a255f6f566c8fd24f723) 
     - optimized babel config [a22c2519](https://github.com/glebcha/rt-notify/commit/a22c2519df34a760a8451ab9865088b17a1417ed) 
     - updated lockfile [b54da54c](https://github.com/glebcha/rt-notify/commit/b54da54c91960ad7dae6cce7c88e877f027a1c31) 
