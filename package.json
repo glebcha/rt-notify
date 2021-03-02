@@ -7,6 +7,7 @@
   "author": "Glebcha",
   "license": "MIT",
   "repository": "https://github.com/glebcha/rt-notify",
+  "homepage": "https://glebcha.github.io/rt-notify",
   "files": [
     "build",
     "package-lock.json"
