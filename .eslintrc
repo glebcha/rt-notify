@@ -9,7 +9,6 @@
   },
   "plugins": [
 		"prettier",
-		"@typescript-eslint",
 		"react",
 		"react-hooks"
 	],
@@ -20,9 +19,6 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react",
-    "prettier/standard"
   ],
   "rules": {
     "no-console": 2,
