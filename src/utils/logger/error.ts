@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
-import chalk from 'chalk';
-
 type Options = { type: string, script?: string, vars?: Array<string>, silent?: boolean }
 
-export function error(options: Options): Error | void {
+const { error } = console;
+
+export function errorLogger(options: Options): Error | void {
   const { type = 'unknown', script, vars = [], silent = false } = options;
   const definition = script ? ` from ${script}` : '';
   const err = { message: '', type };
@@ -22,7 +21,7 @@ export function error(options: Options): Error | void {
   }
 
   if (silent) {
-    console.log(chalk.red.bold(err.message));
+    error(err.message);
   } else {
     throw new Error(err.message);
   }

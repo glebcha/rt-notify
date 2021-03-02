@@ -1,24 +1,24 @@
-/* eslint-disable no-console */
-import chalk from 'chalk';
-
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 type Options = { type?: string, message: string }
 
-export function info(options: Options): void {
+const { log, info, warn } = console;
+
+export function infoLogger(options: Options): void {
   const { type = 'info', message } = options;
-  let result = '';
+  let result = () => log(message);
 
   switch (type) {
     case 'info':
-      result = chalk.grey.bold(message);
+      result = () => info(message);
       break;
     case 'success':
-      result = chalk.green.bold(message);
+      result = () => log(message);
       break;
     case 'warning':
-      result = chalk.yellow.bold(message);
+      result = () => warn(message);
       break;
     default:
   }
 
-  console.log(result);
+  result();
 }
