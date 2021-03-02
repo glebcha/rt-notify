@@ -30,8 +30,9 @@
     "preversion": "npm run lint",
     "postversion": "npm run build",
     "storybook": "start-storybook -p 6006",
-    "deploy-storybook": "storybook-to-ghpages",
-    "build-storybook": "build-storybook -s public"
+    "stories": "npx npm-run-all --sequential stories:*",
+    "stories:build": "build-storybook -s public",
+    "stories:deploy": "storybook-to-ghpages"
   },
   "dependencies": {
     "clsx": "^1.1.1",
