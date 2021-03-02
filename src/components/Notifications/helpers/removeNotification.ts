@@ -1,6 +1,6 @@
-import findIndex from '@bit/ramda.ramda.find-index';
+import { default as findIndex } from 'ramda/src/findIndex';
 import { State } from '../types';
-import { NotificationProps } from '../../../types';
+import { NotificationProps } from '../../Notification/types';
 
 
 
