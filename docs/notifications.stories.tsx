@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, button, select, boolean, number } from '@storybook/addon-knobs';
+import { NotificationProps } from '../src/components/Notification/types';
 import { Notifications, eventEmitter } from '../src/components/Notifications';
-import { Animation, Placement, NotificationProps } from '../src/types';
+import { Animation, Placement } from '../src/types';
 
 const defaultNotifications: Array<NotificationProps> = [
   { id: 1, type: 'success', content: 'Success Notification', width: '350px', timeout: null },

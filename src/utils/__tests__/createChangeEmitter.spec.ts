@@ -1,5 +1,6 @@
-import { Emitter, createChangeEmitter } from '../createChangeEmitter';
-import { NotificationProps } from '../../types';
+import { createChangeEmitter } from '../createChangeEmitter';
+import { Emitter } from '../types';
+import { NotificationProps } from '../../components/Notification/types';
 
 let emitter: Emitter | null = null;
 
