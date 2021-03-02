@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import clsx from 'clsx';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { Notification } from '../Notification/Notification';
 import { hash, logger, createChangeEmitter } from '../../utils';
@@ -8,13 +8,13 @@ import { compareProps } from './helpers/compareProps';
 import { eventsListener } from './helpers/eventListener';
 import { removeNotification } from './helpers/removeNotification';
 
-import { State } from './types';
-import { NotificationsProps } from '../../types';
+import { State, NotificationsProps } from './types';
+import { Emitter } from '../../utils/types';
 
 import styles from './Notifications.css';
 import '../../styles/global.css';
 
-export const eventEmitter = createChangeEmitter();
+export const eventEmitter: Emitter = createChangeEmitter();
 
 const defaultProps: Required<NotificationsProps> = {
   animation: 'fade',
@@ -36,8 +36,8 @@ export const Notifications: React.FC<NotificationsProps> = React.memo(props => {
   } = state;
   const position = placement.replace(/./,x=>x.toUpperCase());
   const animationVariables: Record<string, string> = {
-    '--rt-notify-in-animation': `${animation}In${position}`,
-    '--rt-notify-out-animation': `${animation}Out${position}`,
+    '--rt-notify-in-animation': `${String(animation)}In${position}`,
+    '--rt-notify-out-animation': `${String(animation)}Out${position}`,
   };
 
   React.useEffect(() => {
@@ -63,7 +63,7 @@ export const Notifications: React.FC<NotificationsProps> = React.memo(props => {
     isValid ? (
       <div
         style={animationVariables} 
-        className={cn('rt-notify-root', placement, styles.root)}
+        className={clsx('rt-notify-root', placement, styles.root)}
       >
         <TransitionGroup className={styles.wrapper}>
           {notifications.map(notification => {

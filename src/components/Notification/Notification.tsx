@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import clsx from 'clsx';
 import { Icon } from '../Icon';
 import { setTimer } from './helpers/setTimer';
 import { clearTimer } from './helpers/clearTimer';
@@ -33,7 +33,7 @@ export const Notification: React.FC<Props> = props => {
   return (
     <div
       style={notificationVariables}
-      className={cn(styles.wrapper, placement, type)}
+      className={clsx(styles.wrapper, placement, type)}
       onMouseOver={onMouseOver}
       onMouseOut={onMouseOut}
     >
