@@ -1,10 +1,10 @@
 [
   {
-    "path": ["build/index.cjs.js"],
-    "limit": "74 KB"
+    "path": ["build/index.umd.js"],
+    "limit": "50 KB"
   },
   {
     "path": ["build/index.esm.js"],
-    "limit": "72 KB"
+    "limit": "50 KB"
   }
 ]
