@@ -1,23 +1,12 @@
-import { NotificationProps } from '../types';
+import { NotificationProps } from '../components/Notification/types';
+import { Emitter, Action, Register } from './types';
 import { logger } from './logger';
-
-export type Action = 'add' | 'remove'
-
-interface Register { 
-  instances: Array<string>, 
-  inited: boolean
-}
-
-export interface Emitter { 
-  listen: (cb: (action: Action, notification?: NotificationProps) => void) => void, 
-  emit: (action: Action, notification?: NotificationProps) => void, 
-  register: (id: Register['instances'][number]) => Register
-}
 
 export function createChangeEmitter(): Emitter {
   const instances: Register['instances'] = [];
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  let listener = (action: Action, notification?: NotificationProps): void => {
+  let listener = (_action: Action, _notification?: NotificationProps): void => {
     //empty
   };
 

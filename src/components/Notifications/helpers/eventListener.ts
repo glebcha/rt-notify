@@ -1,8 +1,8 @@
 import { addNotification } from './addNotification';
 import { removeNotification } from './removeNotification';
 import { State } from '../types';
-import { NotificationProps } from '../../../types';
-import { Action } from '../../../utils/createChangeEmitter';
+import { NotificationProps } from '../../Notification/types';
+import { Action } from '../../../utils/types';
 
 export function eventsListener(
   setState: React.Dispatch<React.SetStateAction<State>>

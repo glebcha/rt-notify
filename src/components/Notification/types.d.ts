@@ -1,5 +1,13 @@
-import { NotificationProps, Theme, Placement } from '../../types';
+import { Theme, Placement, Status } from '../../types';
 
+export interface NotificationProps {
+  id?: string | number
+  type?: Status
+  content: React.ReactNode
+  width?: string
+  timeout?: number | null
+  onClose?: (event?: React.MouseEventHandler<HTMLElement>) => void
+}
 export interface Props extends NotificationProps {
   width?: string
   theme?: Theme

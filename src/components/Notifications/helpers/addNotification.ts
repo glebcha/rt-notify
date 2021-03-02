@@ -1,6 +1,6 @@
 import { hash } from '../../../utils';
 import { State } from '../types';
-import { NotificationProps } from '../../../types';
+import { NotificationProps } from '../../Notification/types';
 
 export function addNotification (
   setState: React.Dispatch<React.SetStateAction<State>>
