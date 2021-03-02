@@ -18,7 +18,6 @@
     "rt-notify"
   ],
   "scripts": {
-    "start": "start-storybook --port 9444",
     "test": "jest --passWithNoTests",
     "lint": "npx npm-run-all --parallel lint:*",
     "lint:code": "eslint src --ext .ts,.tsx",
