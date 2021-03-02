@@ -1,15 +1,25 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "commonjs",
-    "target": "es2015",
+    "target": "ES2015",
     "sourceMap": true,
-    "jsx": "react",
     "strict": true,
-    "declaration": true,
+    "downlevelIteration": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "jsx": "react",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "DOM",
+      "ES2017",
+      "ES2018",
+      "ESNext"
+    ]
   },
   "include": ["src/**/*"],
-  "exclude": ["./node_modules/*"]
+  "exclude": ["./node_modules/*", "*.spec.ts"]
 }
