@@ -13,12 +13,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "DOM",
-      "ES2017",
-      "ES2018",
-      "ESNext"
-    ]
+    "lib": ["DOM", "ES2017", "ES2018", "ESNext"]
   },
   "include": ["src/**/*"],
   "exclude": ["./node_modules/*", "*.spec.ts"]

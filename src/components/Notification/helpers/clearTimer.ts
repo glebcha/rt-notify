@@ -1,4 +1,4 @@
-import { Timer } from '../types';
+import { Timer } from "../types";
 
 export function clearTimer(timer: Timer): void {
   timer.current && clearTimeout(timer.current);

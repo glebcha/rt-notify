@@ -1,4 +1,4 @@
-import { Props, Timer } from '../types';
+import { Props, Timer } from "../types";
 
 export function setTimer(props: Props, timer: Timer): void {
   const { id, remove, timeout, defaultTimeout, onClose } = props;

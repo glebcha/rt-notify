@@ -1,21 +1,18 @@
 // const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  stories: ['../docs/**/*.stories.@(tsx|mdx)'],
-  addons: [
-    '@storybook/addon-knobs',
-    '@storybook/addon-docs',
-  ],
+  stories: ["../docs/**/*.stories.@(tsx|mdx)"],
+  addons: ["@storybook/addon-knobs", "@storybook/addon-docs"],
   webpackFinal: async (config, { configType }) => {
-    const isDev = configType === 'DEVELOPMENT';
+    const isDev = configType === "DEVELOPMENT";
 
-    config.module.rules = config.module.rules.map(fileName => {
+    config.module.rules = config.module.rules.map((fileName) => {
       // Needed to add this to ignore our ../src/ for the default rule, instead of purging it.
-      if (fileName.test.toString() === '/\\.css$/') {
-        fileName.exclude = path.resolve(__dirname, '../src/');
+      if (fileName.test.toString() === "/\\.css$/") {
+        fileName.exclude = path.resolve(__dirname, "../src/");
       }
-  
+
       return fileName;
     });
 
@@ -31,11 +28,11 @@ module.exports = {
     //   test: /\.scss$/,
     //   use: [
     //     isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-    //     { 
-    //       loader: 'css-loader', 
-    //       options: { 
-    //         importLoaders: 1 
-    //       }, 
+    //     {
+    //       loader: 'css-loader',
+    //       options: {
+    //         importLoaders: 1
+    //       },
     //     },
     //     'resolve-url-loader',
     //     'sass-loader'
@@ -46,24 +43,24 @@ module.exports = {
       test: /\.css$/,
       use: [
         isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-        { 
-          loader: 'css-loader', 
-          options: { 
+        {
+          loader: "css-loader",
+          options: {
             modules: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-            }, 
-            importLoaders: 1 
-          }, 
+              localIdentName: "[name]__[local]___[hash:base64:5]",
+            },
+            importLoaders: 1,
+          },
         },
-        'postcss-loader'
-      ]
+        "postcss-loader",
+      ],
     });
 
     return config;
   },
 };
 
-const path = require('path');
+const path = require("path");
 
 // module.exports = ({ config }) => {
 //   config.module.rules = config.module.rules.map(fileName => {
@@ -87,14 +84,14 @@ const path = require('path');
 //     test: /\.css$/,
 //     use: [
 //       'style-loader',
-//       { 
-//         loader: 'css-loader', 
-//         options: { 
+//       {
+//         loader: 'css-loader',
+//         options: {
 //           modules: {
 //             localIdentName: '[name]__[local]___[hash:base64:5]',
-//           }, 
-//           importLoaders: 1 
-//         }, 
+//           },
+//           importLoaders: 1
+//         },
 //       },
 //       'postcss-loader'
 //     ]
