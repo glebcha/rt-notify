@@ -1,8 +1,8 @@
-import { addNotification } from './addNotification';
-import { removeNotification } from './removeNotification';
-import { State } from '../types';
-import { NotificationProps } from '../../Notification/types';
-import { Action } from '../../../utils/types';
+import { addNotification } from "./addNotification";
+import { removeNotification } from "./removeNotification";
+import { State } from "../types";
+import { NotificationProps } from "../../Notification/types";
+import { Action } from "../../../utils/types";
 
 export function eventsListener(
   setState: React.Dispatch<React.SetStateAction<State>>
@@ -12,12 +12,12 @@ export function eventsListener(
 
   return (action, notification): void => {
     switch (action) {
-      case 'add':
+      case "add":
         notification && add(notification);
         break;
-      case 'remove':
+      case "remove":
         notification && remove(String(notification.id));
-        break; 
+        break;
       default:
         break;
     }

@@ -1,4 +1,4 @@
-@import 'animations.css';
-@import 'positioning.css';
+@import "animations.css";
+@import "positioning.css";
 
 @mixin notification-type-and-colors;

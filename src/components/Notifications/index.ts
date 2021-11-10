@@ -1,1 +1,1 @@
-export { Notifications, eventEmitter } from './Notifications';
+export { Notifications, eventEmitter } from "./Notifications";

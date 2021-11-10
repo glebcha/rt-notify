@@ -9,11 +9,11 @@ React notifications made simple, yet powerful
 ##### All dynamic styling propeties made with css variables and fallback to default properties.
 
 ```
-const notification = { 
-  type: 'waiting', 
-  content: 'Waiting Notification New', 
-  width: '700px', 
-  onClose: () => console.log('CLOSED WAITING NOTIFICATION') 
+const notification = {
+  type: 'waiting',
+  content: 'Waiting Notification New',
+  width: '700px',
+  onClose: () => console.log('CLOSED WAITING NOTIFICATION')
 }
 
 type Animation = 'fade' | 'bounce' | 'zoom'
