@@ -92,7 +92,7 @@
     "rollup-plugin-ramda": "^1.0.5",
     "rollup-plugin-size-snapshot": "^0.12.0",
     "rollup-plugin-terser": "^7.0.2",
-    "simple-git": "^2.35.2",
+    "simple-git": "^3.3.0",
     "size-limit": "^4.9.2",
     "style-loader": "^2.0.0",
     "stylelint": "^13.11.0",
