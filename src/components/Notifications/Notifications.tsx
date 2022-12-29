@@ -21,6 +21,7 @@ const defaultProps: Required<NotificationsProps> = {
   notifications: [],
   placement: 'right',
   defaultTimeout: 1500,
+  animationTimeout: 500,
   duplicatePlaceholder: null,
 };
 
@@ -31,13 +32,13 @@ export const Notifications: React.FC<NotificationsProps> = React.memo(props => {
     placement, 
     animation,
     notifications,
-    defaultTimeout, 
+    defaultTimeout,
+    animationTimeout, 
     duplicatePlaceholder,
   } = state;
-  const position = placement.replace(/./,x=>x.toUpperCase());
   const animationVariables: Record<string, string> = {
-    '--rt-notify-in-animation': `${String(animation)}In${position}`,
-    '--rt-notify-out-animation': `${String(animation)}Out${position}`,
+    '--rt-notify-in-animation': `${String(animation)}-in-${placement}`,
+    '--rt-notify-out-animation': `${String(animation)}-out-${placement}`,
   };
 
   React.useEffect(() => {
@@ -70,7 +71,7 @@ export const Notifications: React.FC<NotificationsProps> = React.memo(props => {
             const { id, type, timeout, content, width, onClose } = notification;
 
             return notification && (
-              <CSSTransition key={id} timeout={500} classNames="rt-notify">
+              <CSSTransition key={id} timeout={animationTimeout} classNames="rt-notify">
                 <Notification
                   id={id}
                   type={type}
