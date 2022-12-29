@@ -17,25 +17,23 @@ describe('Change Emitter', () => {
     if (!emitter) throw 'no emitter';
 
     const { listen, emit } = emitter;
-    let result = 1;
+    const increment = jest.fn();
+    const decrement = jest.fn();
 
     listen((action) => {
-      switch (action) {
-        case 'add':
-          result += 1;
-          break;
-        case 'remove':
-          result -= 1;
-          break; 
-        default:
-          break;
+      if (action === 'add') {
+        return increment;
+      } else {
+        return decrement;
       }
     });
-    emit('add');
-    emit('add');
-    emit('remove');
 
-    expect(result).toEqual(2);
+    emit('add')();
+    emit('add')();
+    emit('remove')();
+
+    expect(increment).toBeCalledTimes(2);
+    expect(decrement).toBeCalledTimes(1);
  });
  it('should use additional param passed in emit method', () => {
     if (!emitter) throw 'no emitter';
@@ -49,16 +47,13 @@ describe('Change Emitter', () => {
 
     let result;
 
-    listen((action, param) => {
-      switch (action) {
-        case 'add':
-          result = param;
-          break;
-        default:
-          break;
+    listen((action) => (param) => {
+      if (action === 'add') {
+        result = param;
       }
     });
-    emit('add', notification);
+
+    emit('add')(notification);
 
     expect(result).toEqual(notification);
  });
