@@ -34,6 +34,7 @@ interface NotificationsProps {
   animation?: Animation
   placement?: Placement
   defaultTimeout?: number
+  animationTimeout?: number
   duplicatePlaceholder?: React.ReactElement | null
 }
 ```
