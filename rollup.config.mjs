@@ -1,13 +1,13 @@
 import fs from 'fs';
 import glob from 'glob';
-import ts from '@wessberg/rollup-plugin-ts';
+import ts from 'rollup-plugin-ts';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss-modules';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import externals from 'rollup-plugin-node-externals';
+import summary from "rollup-plugin-summary";
 import { terser } from 'rollup-plugin-terser';
-import { sizeSnapshot } from "rollup-plugin-size-snapshot";
 
 const globals = {
   react: 'React',
@@ -49,6 +49,7 @@ export default {
     }),
     externals({
       deps: true,
+      devDeps: true,
       exclude: [
         'clsx', 
         'ramda',
@@ -77,7 +78,11 @@ export default {
       sourceMap: false,
       include: '**/node_modules/**',
     }),
-    sizeSnapshot(),
+    summary({
+      showBrotliSize: true,
+      showGzippedSize: true,
+      showMinifiedSize: true,
+    }),
     terser(),
   ],
 };
