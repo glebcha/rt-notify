@@ -19,7 +19,7 @@
   display: inline-block;
   flex-shrink: 0;
   box-sizing: border-box;
-  padding: 16px 16px;
+  padding: 16px;
   vertical-align: top;
 }
 

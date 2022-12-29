@@ -12,12 +12,12 @@
 
 :global .rt-notify-root.top {
   top: 0;
-  padding: 15px 0 0 0;
+  padding: 15px 0 0;
 }
 
 :global .rt-notify-root.bottom {
   bottom: 0;
-  padding: 0 0 15px 0;
+  padding: 0 0 15px;
 }
 
 :global .rt-notify-root.left {
