@@ -1,38 +1,58 @@
 <img width="300px" src="https://cdn1.iconfinder.com/data/icons/just-for-fun/64/__notification_messege_alarm-512.png" />
 
-# rt-notify  v2.0.0  
+# rt-notify  v3.0.0  
 
 
 ##### _simple yet powerful notifications for React_
 
 
-## Refactor
-  - put types in proper context [d84a952e](https://github.com/glebcha/rt-notify/commit/d84a952e9c87c6df75e986b5952720ba343ee6a2) 
-    - use ramda lib instead bitdev repo modules [8ff72759](https://github.com/glebcha/rt-notify/commit/8ff72759208eef767ebe1d592fb5665ea61d91c4) 
-    - replaced classnames with clsx [dc2fad39](https://github.com/glebcha/rt-notify/commit/dc2fad39276474c1e008c565172fc5414685b9ab) 
+## Bug Fixes
+  - removed lint comments [94695cb6](https://github.com/glebcha/rt-notify/commit/94695cb61636fd3ca9d5fea698ce9acdbd6a557c) 
+    - stylelint [c56fc9e0](https://github.com/glebcha/rt-notify/commit/c56fc9e01df16f861e440ab066b21592d8fe993d) 
+    - upgrade multiple dependencies with Snyk [966f1777](https://github.com/glebcha/rt-notify/commit/966f17775aec8d69909068653b86ac11c8f92ccd) 
   
-  - **logger**
-    - get rid of chalk [80c0ddee](https://github.com/glebcha/rt-notify/commit/80c0ddee59aeb5b099d6385d08398cdbf8b6dd97) 
+  - **icon**
+    - replaced type from SFC with FC [60acb61c](https://github.com/glebcha/rt-notify/commit/60acb61c684033de1e05f290fda317c6930a2704) 
+  
+  - **styles**
+    - changed effects naming to kebab-case [a816048b](https://github.com/glebcha/rt-notify/commit/a816048b5b732942957f20bfc5d452e6b4a7a9ac) 
+  
+  - **test**
+    - simplified test cases [3727c09d](https://github.com/glebcha/rt-notify/commit/3727c09db424f27e8dc4f2c6837a0c86083c9df0) 
+  
+
+
+
+## Features
+  - used concurrently instead npm-run-all, updated dependencies [1deb5b18](https://github.com/glebcha/rt-notify/commit/1deb5b18d3c11f194e5f9870e6e9bb3ec0cdf987) 
+  
+  - **notifications**
+    - added animationTimeout and changed animation name composition [c590217f](https://github.com/glebcha/rt-notify/commit/c590217fe17b5176ec0d5428e95d25bc698f8dbb) 
+  
+
+
+
+## Documentation
+  - optimized changelog composition [e7517ee6](https://github.com/glebcha/rt-notify/commit/e7517ee6a0e6e57559251f4cbc2c47d19e017d9b) 
+    - added animationTimeout [d3b073e9](https://github.com/glebcha/rt-notify/commit/d3b073e94b76137c74a8f6dac5adee92e7921254) 
+    - migrated to storybook 6.5 [4fdb6b89](https://github.com/glebcha/rt-notify/commit/4fdb6b890ead7c69419a0db29291f7e79dd5a90c) 
+  
+
+
+
+## Refactor
+  - reused Listener type [5254234d](https://github.com/glebcha/rt-notify/commit/5254234d7bfed5b9c59a4e9c905288d4c8a6f91b) 
+    - event bus [7628cbf0](https://github.com/glebcha/rt-notify/commit/7628cbf06de9b6c5268b5c16fdded0a70adf9d6f) 
   
 
 
 
 ## Chore
-  - added stories scripts [fa0005bc](https://github.com/glebcha/rt-notify/commit/fa0005bc25b069179e2269bba2d1d0632cf868df) 
-    - removed start script [d6fb70ab](https://github.com/glebcha/rt-notify/commit/d6fb70ab40163eba4276c1cdd348d19f32e9565b) 
-    - optimized tsconfig [6884cb97](https://github.com/glebcha/rt-notify/commit/6884cb9730d698388ceb09048dd369571f435d75) 
-    - lowered bundle size limit [6b038fc8](https://github.com/glebcha/rt-notify/commit/6b038fc832b04982c2f77f5adb72a74c6a0119fc) 
-    - optimized scripts and updated dependencies [2bfa220f](https://github.com/glebcha/rt-notify/commit/2bfa220ffc7124dff845678840b7e7e7be3b297a) 
-    - changed types location [ceacb19a](https://github.com/glebcha/rt-notify/commit/ceacb19a334062fe25aeaf2688ec0df580f17d70) 
-    - changed entrypoint file extension to follow content semantic [e88b9ab8](https://github.com/glebcha/rt-notify/commit/e88b9ab8517a31b2e7776e2e117078db26336121) 
-    - updated changelog [7a0198e6](https://github.com/glebcha/rt-notify/commit/7a0198e65b26748db3619ee241bb365b0f81ed09) 
-  
-  - **build**
-    - get rid of babel, included all external dependencies except react, build umd brwoser module [8c72b44b](https://github.com/glebcha/rt-notify/commit/8c72b44bf533c0f341da216afd0994f0ee0f7f6f) 
-      - removed babel config [2025e7cf](https://github.com/glebcha/rt-notify/commit/2025e7cf75b121eb6624a7dc5f142c9e9f1906ec) 
-  
-  - **lint**
-    - removed deprecated prettier plugins [ddc8b734](https://github.com/glebcha/rt-notify/commit/ddc8b7348532e37e4bdacc401a2beabfb56added) 
+  - leave unlinked stories scripts [896044e5](https://github.com/glebcha/rt-notify/commit/896044e564aa92cad439bba7abe21431644104a7) 
+    - excluded postcss mixins from lint checks [f0fc3a52](https://github.com/glebcha/rt-notify/commit/f0fc3a52c2d5162f3b0894125f0c6816d4316669) 
+    - enhanced eslint rules [67d5b81f](https://github.com/glebcha/rt-notify/commit/67d5b81fccd6a0e741bf0aa2ac92c8dd37021a89) 
+    - added homepage url in package.json [71d34124](https://github.com/glebcha/rt-notify/commit/71d34124aba4aca120d177fe22362507c6eba3e3) 
+    - updated changelog [af5c0b2b](https://github.com/glebcha/rt-notify/commit/af5c0b2b7a21b0ca6f8cbf5c1c356473a20cb647) 
   
 
 
