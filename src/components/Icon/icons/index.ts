@@ -5,7 +5,7 @@ import { Cross } from './Cross';
 import { IconProps } from './types';
 
 declare interface Icons {
-  [id: string]: React.SFC<IconProps>
+  [id: string]: React.FC<IconProps>
 }
 
 export const icons: Icons = {
