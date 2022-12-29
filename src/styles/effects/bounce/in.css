@@ -1,4 +1,6 @@
-@keyframes bounceIn {
+/* stylelint-disable keyframe-block-no-duplicate-selectors */
+/* stylelint-disable keyframe-selector-notation */
+@keyframes bounce-in {
   from,
   20%,
   40%,
@@ -35,7 +37,7 @@
     opacity: 1;
   }
 }
-@keyframes bounceInBottom {
+@keyframes bounce-in-bottom {
   from,
   60%,
   75%,
@@ -66,7 +68,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes bounceInLeft {
+@keyframes bounce-in-left {
   from,
   60%,
   75%,
@@ -97,7 +99,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes bounceInRight {
+@keyframes bounce-in-right {
   from,
   60%,
   75%,
@@ -128,7 +130,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes bounceInTop {
+@keyframes bounce-in-top {
   from,
   60%,
   75%,

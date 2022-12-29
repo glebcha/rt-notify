@@ -1,16 +1,16 @@
 :global .rt-notify-enter {
-  animation-name: fadeIn;
+  animation-name: fade-in;
   animation-name: var(--rt-notify-in-animation);
 }
 
 :global .rt-notify-exit-active {
-  animation-name: fadeOut;
+  animation-name: fade-out;
   animation-name: var(--rt-notify-out-animation);
 }
 
-@global-import './effects/fade/in.css';
-@global-import './effects/fade/out.css';
-@global-import './effects/zoom/in.css';
-@global-import './effects/zoom/out.css';
-@global-import './effects/bounce/in.css';
-@global-import './effects/bounce/out.css';
+@global-import "./effects/fade/in.css";
+@global-import "./effects/fade/out.css";
+@global-import "./effects/zoom/in.css";
+@global-import "./effects/zoom/out.css";
+@global-import "./effects/bounce/in.css";
+@global-import "./effects/bounce/out.css";

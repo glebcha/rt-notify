@@ -1,4 +1,5 @@
-@keyframes zoomIn {
+/* stylelint-disable keyframe-selector-notation */
+@keyframes zoom-in {
   from {
     transform: scale3d(0.3, 0.3, 0.3);
     opacity: 0;
@@ -8,7 +9,7 @@
     opacity: 1;
   }
 }
-@keyframes zoomInBottom {
+@keyframes zoom-in-bottom {
   from {
     transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
     opacity: 0;
@@ -21,7 +22,7 @@
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
-@keyframes zoomInLeft {
+@keyframes zoom-in-left {
   from {
     transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
     opacity: 0;
@@ -34,7 +35,7 @@
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
-@keyframes zoomInRight {
+@keyframes zoom-in-right {
   from {
     transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
     opacity: 0;
@@ -47,7 +48,7 @@
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   }
 }
-@keyframes zoomInTop {
+@keyframes zoom-in-top {
   from {
     transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
     opacity: 0;

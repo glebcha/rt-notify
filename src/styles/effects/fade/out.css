@@ -1,4 +1,4 @@
-@keyframes fadeOut {
+@keyframes fade-out {
   from {
     opacity: 1;
   }
@@ -7,7 +7,7 @@
     opacity: 0;
   }
 }
-@keyframes fadeOutBottom {
+@keyframes fade-out-bottom {
   from {
     opacity: 1;
   }
@@ -17,7 +17,7 @@
     opacity: 0;
   }
 }
-@keyframes fadeOutLeft {
+@keyframes fade-out-left {
   from {
     opacity: 1;
   }
@@ -27,7 +27,7 @@
     opacity: 0;
   }
 }
-@keyframes fadeOutRight {
+@keyframes fade-out-right {
   from {
     opacity: 1;
   }
@@ -37,7 +37,7 @@
     opacity: 0;
   }
 }
-@keyframes fadeOutTop {
+@keyframes fade-out-top {
   from {
     opacity: 1;
   }
