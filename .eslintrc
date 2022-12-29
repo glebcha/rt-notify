@@ -18,13 +18,15 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/recommended",
-    "prettier",
+    "prettier"
   ],
   "rules": {
     "no-console": 2,
     "semi": 2,
     "react/prop-types": 0,
-    "react/display-name": 0
+    "react/display-name": 0,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": [1, { "argsIgnorePattern": "^_" }]
   },
   "env": {
     "browser": true,
