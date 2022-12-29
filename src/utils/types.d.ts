@@ -9,6 +9,6 @@ interface Register {
 
 export interface Emitter { 
   listen: (cb: Listener) => void, 
-  emit: (action: Action) => (data: unknown) => void, 
+  emit: Listener, 
   register: (id: Register['instances'][number]) => Register
 }
