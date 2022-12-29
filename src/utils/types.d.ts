@@ -1,7 +1,4 @@
-
-import { NotificationProps } from '../components/Notification/types';
-
-type ListenCallback = (action: Action, notification?: NotificationProps) => void
+export type Listener = (action: Action) => (data?: unknown) => void;
 
 export type Action = 'add' | 'remove'
 
@@ -11,7 +8,7 @@ interface Register {
 }
 
 export interface Emitter { 
-  listen: (cb: ListenCallback) => void, 
-  emit: (action: Action, notification?: NotificationProps) => void, 
+  listen: (cb: Listener) => void, 
+  emit: (action: Action) => (data: unknown) => void, 
   register: (id: Register['instances'][number]) => Register
 }

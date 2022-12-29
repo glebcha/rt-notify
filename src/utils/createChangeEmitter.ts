@@ -1,16 +1,18 @@
-import { NotificationProps } from '../components/Notification/types';
-import { Emitter, Action, Register } from './types';
+import { Emitter, Action, Register, Listener } from './types';
 import { logger } from './logger';
 
 export function createChangeEmitter(): Emitter {
   const instances: Register['instances'] = [];
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  let listener = (_action: Action, _notification?: NotificationProps): void => {
-    //empty
+  let listener = (
+    _action: Parameters<Listener>[0], 
+  ) => {
+     return (_data?: unknown) => {
+      /* noop */
+     };
   };
 
-  function listen(cb: (action: Action, notification?: NotificationProps) => void): void {
+  function listen(cb: Listener): void {
     if (typeof cb !== 'function') {
       logger.error({ type: 'emitter' });
     }
@@ -18,8 +20,8 @@ export function createChangeEmitter(): Emitter {
     listener = cb;
   }
 
-  function emit(action: Action, notification?: NotificationProps): void { 
-    return listener(action, notification); 
+  function emit(action: Action) { 
+    return listener(action); 
   }
 
   function register(id: Register['instances'][number]): Register {
